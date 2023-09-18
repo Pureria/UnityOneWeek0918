@@ -8,25 +8,11 @@ namespace MorseGame.StartUp
 {
     public class StartUp : MonoBehaviour
     {
-        [SerializeField] private GameObject _DebugMapPrefab;
-        [SerializeField] private GameObject _DebugPlayerPrefab;
-        [SerializeField] private GameObject _DebugPlayerNPCPrefab;
+        [SerializeField] StageData _DebugStageData;
 
         private void Awake()
         {
-            GameObject InstantMap = Instantiate( _DebugMapPrefab );
-            GameObject InstantPlayer = Instantiate( _DebugPlayerPrefab );
-            GameObject InStantPlayerNPC = Instantiate(_DebugPlayerNPCPrefab);
-            MapInfo mapInfo = null;
-            PlayerController pc = null;
-
-            if (!InstantMap.TryGetComponent<MapInfo>(out mapInfo)) Debug.LogError("マップのプレハブにMapInfoがありません");
-            if (!InstantPlayer.TryGetComponent<PlayerController>(out pc)) Debug.LogError("プレイヤーのプレハブにPlayerControllerがありません");
-
-            pc.OnSendMorseInput += mapInfo.ObjectManager.ReceiveMorseInput;
-            pc.OnShowObjectUI += mapInfo.ObjectManager.ReceiveShowMorseUI;
-            pc.OnHideObjectUI += mapInfo.ObjectManager.ReceiveHideMorseUI;
-            InStantPlayerNPC.transform.position = mapInfo.PlayerSpawnPosition.position;
+            _DebugStageData.SetUp();
         }
     }
 }

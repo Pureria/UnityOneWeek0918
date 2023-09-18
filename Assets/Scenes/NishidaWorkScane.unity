@@ -167,9 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc0e38d2f14ed74d96092c32b6e8085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DebugMapPrefab: {fileID: 6894525142984993719, guid: 6e370e692d381624d9c4df91b07571f6, type: 3}
-  _DebugPlayerPrefab: {fileID: 2794013007291207979, guid: 52669cffbd329264ab728711f29e725a, type: 3}
-  _DebugPlayerNPCPrefab: {fileID: 8713233581681915026, guid: b8810009e604f3740949a5c1d1db3493, type: 3}
+  _DebugStageData: {fileID: 11400000, guid: 29174a63269514846a48a73b1a7069b3, type: 2}
 --- !u!1001 &1820220015
 PrefabInstance:
   m_ObjectHideFlags: 0
