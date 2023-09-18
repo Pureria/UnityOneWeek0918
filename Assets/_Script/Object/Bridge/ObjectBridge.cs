@@ -10,7 +10,10 @@ namespace MorseGame.Object
         [SerializeField] private float _BridgeChangeTime;
 
         [SerializeField] private Transform _LBridgeTran;
-        [SerializeField] private Transform _RBridgeTran;        
+        [SerializeField] private Transform _RBridgeTran;
+
+        [SerializeField] private GameObject _LBridgeCollider;
+        [SerializeField] private GameObject _RBridgeCollider;
 
         private bool nowChange;
         private float ChangeStartTime;
@@ -20,6 +23,10 @@ namespace MorseGame.Object
             base.Start();
 
             NowState = InitBridge;
+            bool setCollider = false;
+            if (!NowState) setCollider = true;
+            _LBridgeCollider.SetActive(setCollider);
+            _RBridgeCollider.SetActive(setCollider);
         }
 
         public override void LogicUpdate()
@@ -66,6 +73,11 @@ namespace MorseGame.Object
                     euler = _RBridgeTran.eulerAngles;
                     euler.z = endKeyR * -1.0f;
                     _RBridgeTran.eulerAngles = euler;
+
+                    bool setCollider = false;
+                    if (!NowState) setCollider = true;
+                    _LBridgeCollider.SetActive(setCollider);
+                    _RBridgeCollider.SetActive(setCollider);
                 }
             }
         }
@@ -78,6 +90,9 @@ namespace MorseGame.Object
             base.ReceiveInteract();
             nowChange = true;
             ChangeStartTime = Time.time;
+
+            _LBridgeCollider.SetActive(true);
+            _RBridgeCollider.SetActive(true);
         }
     }
 }
