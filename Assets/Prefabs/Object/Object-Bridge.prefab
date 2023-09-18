@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 7055844327095378206}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &305499915820832046
 MonoBehaviour:
@@ -49,7 +49,7 @@ MonoBehaviour:
   _MorseData: {fileID: 11400000, guid: 9476fc6abe23d6847bb09d98749527aa, type: 2}
   _PopUpWindow: {fileID: 154023291352477858}
   _isDebugInteract: 0
-  _TextSize: 1.5
+  _TextSize: 0.8
   _TextHeight: 1.5
   InitBridge: 1
   _BridgeChangeTime: 2
@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2580762217825848718, guid: e58aa4c6dbd3ccd4cb468c640095d8b7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5177388603050735206, guid: 31c28765f658f2f45a8c1cb2fe9c9555, type: 3}
     - target: {fileID: 2618550227124305911, guid: e58aa4c6dbd3ccd4cb468c640095d8b7, type: 3}
       propertyPath: m_text
       value: "\u30E2\u30FC\u30EB\u30B9"
