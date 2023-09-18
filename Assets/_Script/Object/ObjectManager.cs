@@ -11,6 +11,8 @@ namespace MorseGame.Object.Manager
         [SerializeField] private bool _DebugSendMorse = false;
         [SerializeField] private List<MorseData> _DebugSendMorseData = new List<MorseData>();
 
+        private ObjectBase _ShowUIObject = null;
+
         private void Update()
         {
             foreach(ObjectBase obj in _Objects)
@@ -56,6 +58,24 @@ namespace MorseGame.Object.Manager
                     break;
                 }
             }
+        }
+
+        public void ReceiveShowMorseUI(ObjectBase obj)
+        {
+            foreach(ObjectBase current in _Objects)
+            {
+                if (current != obj) continue;
+                _ShowUIObject = current;
+                current.ShowMorseUI();
+                break;
+            }
+        }
+
+        public void ReceiveHideMorseUI()
+        {
+            if (_ShowUIObject == null) return;
+            _ShowUIObject.HideMorseUI();
+            _ShowUIObject = null;
         }
     }
 }

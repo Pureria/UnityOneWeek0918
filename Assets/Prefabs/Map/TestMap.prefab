@@ -2083,6 +2083,22 @@ PrefabInstance:
       propertyPath: _RBridgeCollider
       value: 
       objectReference: {fileID: 4176214778550776077}
+    - target: {fileID: 1215099494724717452, guid: be5fc8a9c773618439fe394fd4662dfa, type: 3}
+      propertyPath: m_Size.x
+      value: 11.974689
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215099494724717452, guid: be5fc8a9c773618439fe394fd4662dfa, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9195232
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215099494724717452, guid: be5fc8a9c773618439fe394fd4662dfa, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.0078797
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215099494724717452, guid: be5fc8a9c773618439fe394fd4662dfa, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.19301414
+      objectReference: {fileID: 0}
     - target: {fileID: 7055844327095378206, guid: be5fc8a9c773618439fe394fd4662dfa, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.81

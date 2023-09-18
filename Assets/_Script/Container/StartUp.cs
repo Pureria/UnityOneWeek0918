@@ -24,6 +24,8 @@ namespace MorseGame.StartUp
             if (!InstantPlayer.TryGetComponent<PlayerController>(out pc)) Debug.LogError("プレイヤーのプレハブにPlayerControllerがありません");
 
             pc.OnSendMorseInput += mapInfo.ObjectManager.ReceiveMorseInput;
+            pc.OnShowObjectUI += mapInfo.ObjectManager.ReceiveShowMorseUI;
+            pc.OnHideObjectUI += mapInfo.ObjectManager.ReceiveHideMorseUI;
             InStantPlayerNPC.transform.position = mapInfo.PlayerSpawnPosition.position;
         }
     }
