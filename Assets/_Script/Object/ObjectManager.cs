@@ -8,12 +8,20 @@ namespace MorseGame.Object.Manager
     public class ObjectManager : MonoBehaviour
     {
         private List<ObjectBase> _Objects = new List<ObjectBase>();
+        [SerializeField] private bool _DebugSendMorse = false;
+        [SerializeField] private List<MorseData> _DebugSendMorseData = new List<MorseData>();
 
         private void Update()
         {
             foreach(ObjectBase obj in _Objects)
             {
                 obj.LogicUpdate();
+            }
+
+            if (_DebugSendMorse)
+            {
+                _DebugSendMorse = false;
+                ReceiveMorseInput(_DebugSendMorseData);
             }
         }
 
@@ -22,7 +30,7 @@ namespace MorseGame.Object.Manager
             if(!_Objects.Contains(obj))
             {
                 _Objects.Add(obj);
-            }
+            }            
         }
 
         public void ReceiveMorseInput(List<MorseData> inputMorseData)
