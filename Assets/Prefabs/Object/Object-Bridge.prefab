@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2618550227124305911, guid: e58aa4c6dbd3ccd4cb468c640095d8b7, type: 3}
+      propertyPath: m_text
+      value: "\u30E2\u30FC\u30EB\u30B9"
+      objectReference: {fileID: 0}
     - target: {fileID: 4312401059202362357, guid: e58aa4c6dbd3ccd4cb468c640095d8b7, type: 3}
       propertyPath: m_Name
       value: PopUpBase
