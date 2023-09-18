@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ namespace MorseGame.UI
     {
         [SerializeField] private RectTransform myTran;
         [SerializeField] private SpriteRenderer myRenderer;
+        [SerializeField] private TextMeshProUGUI _TextMeshPro;
         [SerializeField] private float _Margin = 0.2f;
 
         private void Update()
@@ -20,6 +22,11 @@ namespace MorseGame.UI
         public void SetSize(Vector2 size)
         {
             myRenderer.size = size;
+        }
+
+        public void SetText(string text)
+        {
+            _TextMeshPro.text = text;
         }
     }
 }
