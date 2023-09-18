@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Object
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Object
     uniqueID: 3065391285
+    locked: 0
+  - name: MorseText
+    uniqueID: 1243352095
     locked: 0

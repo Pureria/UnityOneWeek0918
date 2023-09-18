@@ -64,5 +64,15 @@ namespace MorseGame.Object
         }
 
         public ObjectMorseData GetMorseData() { return _MorseData; }
+
+        public void ShowMorseUI()
+        {
+
+        }
+
+        public void HideMorseUI()
+        {
+
+        }
     }
 }
