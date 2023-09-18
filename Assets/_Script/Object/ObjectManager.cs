@@ -1,3 +1,4 @@
+using MorseGame.Object.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,31 @@ namespace MorseGame.Object.Manager
             if(!_Objects.Contains(obj))
             {
                 _Objects.Add(obj);
+            }
+        }
+
+        public void ReceiveMorseInput(List<MorseData> inputMorseData)
+        {
+            foreach(ObjectBase obj in _Objects)
+            {
+                List<MorseData> checkData = obj.GetMorseData().MorseData;
+                if (inputMorseData.Count != checkData.Count) continue;
+
+                bool isSame = true;
+                for(int i = 0; i<checkData.Count;i++)
+                {
+                    if (inputMorseData[i].MorseNumber != checkData[i].MorseNumber)
+                    {
+                        isSame = false;
+                        break;
+                    }
+                }
+
+                if(isSame)
+                {
+                    obj.ReceiveInteract();
+                    break;
+                }
             }
         }
     }

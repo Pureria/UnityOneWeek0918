@@ -18,6 +18,7 @@ namespace MorseGame.Object.Data
         //0 = ÅE
         //1 = Å[        
         [SerializeField, Range(0, 1)] private int _Morse;
+        [HideInInspector] public int SetMorse { set { _Morse = value; } }
         public int MorseNumber { get { return _Morse; }}
     }
 }
