@@ -31,7 +31,6 @@ namespace MorseGame.Object
             base.ReceiveInteract();
 
             ChangeStartTime = Time.time;
-            NowState = !NowState;
 
             if (NowState) ShutterDoor.SetActive(false);
             else ShutterDoor.SetActive(true);
