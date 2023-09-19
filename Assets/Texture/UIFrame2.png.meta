@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b2a1af5dc71d6b468e8a80fc8b5ca90
+guid: 55031f09ab41e7145876153213369b1b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,8 +48,8 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 700, y: 700, z: 700, w: 700}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 234, y: 225, z: 234, w: 240}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -108,28 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: UIFrame_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1750
-        height: 1750
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 800, y: 800, z: 800, w: 800}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b8ed2635d84f924e89ce921e0e9d56a
-      internalID: 271806666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -140,8 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      UIFrame_0: 271806666
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
