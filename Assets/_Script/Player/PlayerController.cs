@@ -81,19 +81,22 @@ namespace MorseGame.Player
         {
             //TODO::íÜêgóvïœçX
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(_InputController.MousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
             bool check = false;
 
-            if (hit.collider != null)
+            foreach(RaycastHit2D hit in hits)
             {
-                int objectLayer = LayerMask.NameToLayer("Object");
-                if (hit.transform.gameObject.layer == objectLayer)
+                if (hit.collider != null)
                 {
-                    GameObject clickedObject = hit.collider.gameObject;
-                    if(clickedObject.TryGetComponent<ObjectBase>(out ObjectBase obj))
+                    int objectLayer = LayerMask.NameToLayer("Object");
+                    if (hit.transform.gameObject.layer == objectLayer)
                     {
-                        OnShowObjectUI?.Invoke(obj);
-                        check = true;
+                        GameObject clickedObject = hit.collider.gameObject;
+                        if(clickedObject.TryGetComponent<ObjectBase>(out ObjectBase obj))
+                        {
+                            OnShowObjectUI?.Invoke(obj);
+                            check = true;
+                        }
                     }
                 }
             }
