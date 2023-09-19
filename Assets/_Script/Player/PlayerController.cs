@@ -22,6 +22,8 @@ namespace MorseGame.Player
         public Action<List<MorseData>> OnSendMorseInput;
         public Action<ObjectBase> OnShowObjectUI;
         public Action OnHideObjectUI;
+        public Action<int> OnAddMorseAction;
+        public Action OnClearMorseAction;
 
         private void Start()
         {
@@ -56,6 +58,7 @@ namespace MorseGame.Player
 
                     nowCount = 0;
                     _InputMorseData.Clear();
+                    OnClearMorseAction?.Invoke();
                 }
             }
 
@@ -72,6 +75,7 @@ namespace MorseGame.Player
                 if (_InputController.MorseInputCanceledTime - _InputController.MorseInputStartTime <= _MorseLengthTime) morse = 0;
                 addData.SetMorse = morse;
                 _InputMorseData.Add(addData);
+                OnAddMorseAction?.Invoke(morse);
                 nowCount++;
                 nowInput = false;
             }
@@ -81,19 +85,22 @@ namespace MorseGame.Player
         {
             //TODO::’†g—v•ÏX
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(_InputController.MousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
             bool check = false;
 
-            if (hit.collider != null)
+            foreach(RaycastHit2D hit in hits)
             {
-                int objectLayer = LayerMask.NameToLayer("Object");
-                if (hit.transform.gameObject.layer == objectLayer)
+                if (hit.collider != null)
                 {
-                    GameObject clickedObject = hit.collider.gameObject;
-                    if(clickedObject.TryGetComponent<ObjectBase>(out ObjectBase obj))
+                    int objectLayer = LayerMask.NameToLayer("Object");
+                    if (hit.transform.gameObject.layer == objectLayer)
                     {
-                        OnShowObjectUI?.Invoke(obj);
-                        check = true;
+                        GameObject clickedObject = hit.collider.gameObject;
+                        if(clickedObject.TryGetComponent<ObjectBase>(out ObjectBase obj))
+                        {
+                            OnShowObjectUI?.Invoke(obj);
+                            check = true;
+                        }
                     }
                 }
             }

@@ -12,8 +12,10 @@ namespace MorseGame.Object
         [SerializeField] private Transform _LBridgeTran;
         [SerializeField] private Transform _RBridgeTran;
 
-        [SerializeField] private GameObject _LBridgeCollider;
-        [SerializeField] private GameObject _RBridgeCollider;
+        [SerializeField] private Collider2D _LBridgeCollider;
+        [SerializeField] private Collider2D _RBridgeCollider;
+        [SerializeField] private Collider2D _LBridgeStopCollider;
+        [SerializeField] private Collider2D _RBridgeStopCollider;
 
         private bool nowChange;
         private float ChangeStartTime;
@@ -25,8 +27,10 @@ namespace MorseGame.Object
             NowState = InitBridge;
             bool setCollider = false;
             if (!NowState) setCollider = true;
-            _LBridgeCollider.SetActive(setCollider);
-            _RBridgeCollider.SetActive(setCollider);
+            _LBridgeStopCollider.enabled = setCollider;
+            _RBridgeStopCollider.enabled = setCollider;
+            _LBridgeCollider.enabled = !setCollider;
+            _RBridgeCollider.enabled = !setCollider;
         }
 
         public override void LogicUpdate()
@@ -76,8 +80,10 @@ namespace MorseGame.Object
 
                     bool setCollider = false;
                     if (!NowState) setCollider = true;
-                    _LBridgeCollider.SetActive(setCollider);
-                    _RBridgeCollider.SetActive(setCollider);
+                    _LBridgeStopCollider.enabled = setCollider;
+                    _RBridgeStopCollider.enabled = setCollider;
+                    _LBridgeCollider.enabled = !setCollider;
+                    _RBridgeCollider.enabled = !setCollider;
                 }
             }
         }
@@ -91,8 +97,10 @@ namespace MorseGame.Object
             nowChange = true;
             ChangeStartTime = Time.time;
 
-            _LBridgeCollider.SetActive(true);
-            _RBridgeCollider.SetActive(true);
+            _LBridgeStopCollider.enabled = true;
+            _RBridgeStopCollider.enabled = true;
+            _LBridgeCollider.enabled = false;
+            _RBridgeCollider.enabled = false;
         }
     }
 }

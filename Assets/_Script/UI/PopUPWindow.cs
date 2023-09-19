@@ -26,7 +26,7 @@ namespace MorseGame.UI
 
         public void SetText(string text)
         {
-            _TextMeshPro.text = text;
+           _TextMeshPro.text = text;
         }
     }
 }

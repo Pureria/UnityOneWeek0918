@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace MorseGame.Object
 {
+    [RequireComponent(typeof(Collider2D))]
     public class ObjectBase : MonoBehaviour
     {
         [SerializeField] private ObjectMorseData _MorseData;
