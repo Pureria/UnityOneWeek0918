@@ -40,17 +40,22 @@ namespace MorseGame.StartUp
         {
             GameObject InstantMap = Instantiate(data.MapPrefab);
             GameObject InstantPlayer = Instantiate(data.PlayerPrefab);
-            GameObject InStantPlayerNPC = Instantiate(data.PlayerNPCPrefab);
+            GameObject InstantPlayerNPC = Instantiate(data.PlayerNPCPrefab);
+            GameObject InstantPlayerUI = Instantiate(data.PlayerUIPrefab);
             MapInfo mapInfo = null;
             PlayerController pc = null;
+            PlayerCanvas pUi = null;
 
-            if (!InstantMap.TryGetComponent<MapInfo>(out mapInfo)) Debug.LogError("マップのプレハブにMapInfoがありません");
-            if (!InstantPlayer.TryGetComponent<PlayerController>(out pc)) Debug.LogError("プレイヤーのプレハブにPlayerControllerがありません");
+            if (!InstantMap.TryGetComponent<MapInfo>(out mapInfo))          Debug.LogError("マップのプレハブにMapInfoがありません。");
+            if (!InstantPlayer.TryGetComponent<PlayerController>(out pc))   Debug.LogError("プレイヤーのプレハブにPlayerControllerがありません。");
+            if (!InstantPlayerUI.TryGetComponent<PlayerCanvas>(out pUi))    Debug.LogError("プレイヤーUIプレハブにPlayerCanvasがありません。");
 
-            pc.OnSendMorseInput += mapInfo.ObjectManager.ReceiveMorseInput;
-            pc.OnShowObjectUI += mapInfo.ObjectManager.ReceiveShowMorseUI;
-            pc.OnHideObjectUI += mapInfo.ObjectManager.ReceiveHideMorseUI;
-            InStantPlayerNPC.transform.position = mapInfo.PlayerSpawnPosition.position;
+            pc.OnSendMorseInput     += mapInfo.ObjectManager.ReceiveMorseInput;
+            pc.OnShowObjectUI       += mapInfo.ObjectManager.ReceiveShowMorseUI;
+            pc.OnHideObjectUI       += mapInfo.ObjectManager.ReceiveHideMorseUI;
+            pc.OnAddMorseAction     += pUi.AddText;
+            pc.OnClearMorseAction   += pUi.ClearText;
+            InstantPlayerNPC.transform.position = mapInfo.PlayerSpawnPosition.position;
         }
     }
 }

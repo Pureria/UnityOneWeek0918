@@ -12,7 +12,8 @@ namespace MorseGame.Map
     {
         public GameObject MapPrefab;
         public GameObject PlayerPrefab;
-        public GameObject PlayerNPCPrefab;      
+        public GameObject PlayerNPCPrefab;
+        public GameObject PlayerUIPrefab;
         
         public StageBinaryData GetStageBinaryData()
         {
@@ -21,15 +22,16 @@ namespace MorseGame.Map
             string mapPath = ExtractPath(AssetDatabase.GetAssetPath(MapPrefab), pattern);
             string PlayerPath = ExtractPath(AssetDatabase.GetAssetPath(PlayerPrefab), pattern);
             string PlayerNPCPath = ExtractPath(AssetDatabase.GetAssetPath(PlayerNPCPrefab), pattern);
-            return new StageBinaryData(mapPath, PlayerPath, PlayerNPCPath, this.name);
+            string PlayerUIPath = ExtractPath(AssetDatabase.GetAssetPath(PlayerUIPrefab), pattern);
+            return new StageBinaryData(mapPath, PlayerPath, PlayerNPCPath, PlayerUIPath, this.name);
         }
 
         public StageData SetStageData(StageBinaryData data)
         {
             MapPrefab = Resources.Load<GameObject>(data.MapPrefabPath);
-            //MapPrefab = Resources.Load<GameObject>("Prefabs/Map/TestMap");
             PlayerPrefab = Resources.Load<GameObject>(data.PlayerPrefabPath);
             PlayerNPCPrefab = Resources.Load<GameObject>(data.PlayerNPCPrefabPath);
+            PlayerUIPrefab = Resources.Load<GameObject>(data.PlayerUIPrefabPath);
             return this;
         }
 
@@ -51,17 +53,19 @@ namespace MorseGame.Map
     [System.Serializable]
     public class StageBinaryData
     {
-        public StageBinaryData(string mapPath,string PlayerPath,string PlayerNPCPath , string name)
+        public StageBinaryData(string mapPath,string PlayerPath,string PlayerNPCPath ,string PlayerUIPath, string name)
         {
             MapPrefabPath = mapPath;
             PlayerPrefabPath = PlayerPath;
             PlayerNPCPrefabPath = PlayerNPCPath;
+            PlayerUIPrefabPath = PlayerUIPath;
             StageName = name;
         }
 
         public string MapPrefabPath = "";
         public string PlayerPrefabPath = "";
         public string PlayerNPCPrefabPath = "";
+        public string PlayerUIPrefabPath = "";
         public string StageName = "";
     }
 }

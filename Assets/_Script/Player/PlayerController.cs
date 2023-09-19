@@ -22,6 +22,8 @@ namespace MorseGame.Player
         public Action<List<MorseData>> OnSendMorseInput;
         public Action<ObjectBase> OnShowObjectUI;
         public Action OnHideObjectUI;
+        public Action<int> OnAddMorseAction;
+        public Action OnClearMorseAction;
 
         private void Start()
         {
@@ -56,6 +58,7 @@ namespace MorseGame.Player
 
                     nowCount = 0;
                     _InputMorseData.Clear();
+                    OnClearMorseAction?.Invoke();
                 }
             }
 
@@ -72,6 +75,7 @@ namespace MorseGame.Player
                 if (_InputController.MorseInputCanceledTime - _InputController.MorseInputStartTime <= _MorseLengthTime) morse = 0;
                 addData.SetMorse = morse;
                 _InputMorseData.Add(addData);
+                OnAddMorseAction?.Invoke(morse);
                 nowCount++;
                 nowInput = false;
             }
