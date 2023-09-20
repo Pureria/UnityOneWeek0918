@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DebugHatchMorse
   m_EditorClassIdentifier: 
   MorseData:
-  - _Morse: 0
-  - _Morse: 0
   - _Morse: 1
-  - _Morse: 0
+  - _Morse: 1
+  - _Morse: 1
+  - _Morse: 1
