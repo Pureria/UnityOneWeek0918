@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MorseGame.Object
 {
-    public class ObjectHatchj : ObjectBase
+    public class ObjectHatch : ObjectBase
     {
         [SerializeField, Tooltip("ゲーム開始時にドアが開いているか？TRUE:開いている FALSE:開いていない")]
         private bool InitHatch = false;
