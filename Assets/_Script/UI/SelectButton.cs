@@ -6,28 +6,31 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SelectButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+namespace MorseGame.UI
 {
-    [SerializeField] private Image _FillImage;
-    [SerializeField] private TextMeshProUGUI _TMP;
-    [SerializeField] private Color _RollOverTextColor;
-    private Color _BaseTextColor;
-
-    private void Start()
+    public class SelectButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        _FillImage.fillAmount = 0;
-        _BaseTextColor = _TMP.color;
-    }
+        [SerializeField] private Image _FillImage;
+        [SerializeField] private TextMeshProUGUI _TMP;
+        [SerializeField] private Color _RollOverTextColor;
+        private Color _BaseTextColor;
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        _FillImage.DOFillAmount(1f, 0.25f).SetEase(Ease.OutCubic).Play();
-        _TMP.DOColor(_RollOverTextColor, 0.25f).Play();
-    }
+        private void Start()
+        {
+            _FillImage.fillAmount = 0;
+            _BaseTextColor = _TMP.color;
+        }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        _FillImage.DOFillAmount(0, 0.25f).SetEase(Ease.OutCubic).Play();
-        _TMP.DOColor(_BaseTextColor, 0.25f).Play();
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            _FillImage.DOFillAmount(1f, 0.25f).SetEase(Ease.OutCubic).Play();
+            _TMP.DOColor(_RollOverTextColor, 0.25f).Play();
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            _FillImage.DOFillAmount(0, 0.25f).SetEase(Ease.OutCubic).Play();
+            _TMP.DOColor(_BaseTextColor, 0.25f).Play();
+        }
     }
 }
