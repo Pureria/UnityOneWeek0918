@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 6776191745588691121}
   - component: {fileID: 8589823010710164271}
   - component: {fileID: 8859870912340792021}
+  - component: {fileID: 6106158825917685640}
   m_Layer: 0
   m_Name: MenuPopUp
   m_TagString: Untagged
@@ -196,6 +197,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6106158825917685640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676354116532976984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b65ea072edb68945a1a0b64280a0fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PopUpObject: {fileID: 8087671048075745510}
+  _Scale: {x: 2, y: 2, z: 2}
+  _ChangeTime: 0.25
+  _isStartHide: 1
 --- !u!1 &3831456586212443035
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,4 +409,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4733148044173758621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6106158825917685640}
+        m_TargetAssemblyTypeName: MorseGame.UI.MenuPopUP, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

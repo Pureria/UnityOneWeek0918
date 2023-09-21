@@ -22,7 +22,6 @@ namespace MorseGame.UI
             foreach (Image img in _FillImages)
             {
                 img.DOFillAmount(0f, _FillTime).SetEase(Ease.OutCubic).Play();
-                Debug.Log(img.name + "Start Shot");
                 yield return new WaitForSeconds(_ShiftTime);
             }
         }
