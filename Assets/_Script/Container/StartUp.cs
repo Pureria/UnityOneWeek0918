@@ -57,6 +57,7 @@ namespace MorseGame.StartUp
             pc.OnHideObjectUI       += mapInfo.ObjectManager.ReceiveHideMorseUI;
             pc.OnAddMorseAction     += pUi.AddText;
             pc.OnClearMorseAction   += pUi.ClearText;
+            pc.OnDelOneMorseAction  += pUi.DeleteBackText;
             InstantPlayerNPC.transform.position = mapInfo.PlayerSpawnPosition.position;
         }
     }
