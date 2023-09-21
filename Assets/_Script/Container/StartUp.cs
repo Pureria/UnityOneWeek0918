@@ -29,11 +29,13 @@ namespace MorseGame.StartUp
             MemoryStream memoryStream = new MemoryStream(binaryData);
             BinaryFormatter formatter = new BinaryFormatter();
             StageBinaryData loadedStageData = (StageBinaryData)formatter.Deserialize(memoryStream);
-            PlayerPrefs.DeleteKey(_StageHashKey);
             StageData loadData = ScriptableObject.CreateInstance<StageData>();
-            loadData = loadData.SetStageData(loadedStageData);
-            if (loadedStageData != null) SetUp(loadData);
-            else Debug.LogError("ステージデータが見つかりません");
+            if (loadedStageData != null)
+            {
+                loadData = loadData.SetStageData(loadedStageData);
+                SetUp(loadData);
+            }
+            else Debug.LogError("ステージデータが変換できませんでした。");
         }
 
         public void SetUp(StageData data)
