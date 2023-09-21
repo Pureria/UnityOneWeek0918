@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MorseGame.Object
 {
-    public class CheckUpPlayer : ObjectBase
+    public class CheckUpPlayer : MonoBehaviour
     {
         private bool isTouchPlyer = false;
         private Transform Player;
