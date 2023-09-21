@@ -8,7 +8,7 @@ namespace MorseGame.Object
     public class ObjectSwitchingStairs : ObjectBase
     {
         [SerializeField, Tooltip("ゲーム開始時に階段が存在しているか？TRUE:存在している FALSE:存在していない")]
-        private bool InitSwitchingStairs = false;
+        private bool InitSwitchingStairs = true;
         [SerializeField]
         private float SwitchingStairsChangeTime;
 
@@ -22,8 +22,8 @@ namespace MorseGame.Object
             base.Start();
 
             NowState = InitSwitchingStairs;
-            if (NowState) SwitchingStairs.SetActive(false);
-            else SwitchingStairs.SetActive(true);
+            if (NowState) SwitchingStairs.SetActive(true);
+            else SwitchingStairs.SetActive(false);
         }
 
         public override void ReceiveInteract()
@@ -32,8 +32,8 @@ namespace MorseGame.Object
 
             ChangeStartTime = Time.time;
 
-            if (NowState) SwitchingStairs.SetActive(false);
-            else SwitchingStairs.SetActive(true);
+            if (NowState) SwitchingStairs.SetActive(true);
+            else SwitchingStairs.SetActive(false);
         }
 
         public override void LogicUpdate()

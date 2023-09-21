@@ -97,7 +97,7 @@ MonoBehaviour:
   _isDebugInteract: 0
   _TextSize: 0.8
   _TextHeight: 1.3
-  InitSwitchingStairs: 0
+  InitSwitchingStairs: 1
   SwitchingStairsChangeTime: 0
   SwitchingStairs: {fileID: 5025955959854515499}
 --- !u!1 &5025955959854515499
