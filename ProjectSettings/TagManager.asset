@@ -53,6 +53,9 @@ TagManager:
   - name: MorseText
     uniqueID: 1243352095
     locked: 0
+  - name: enemy
+    uniqueID: 3024073067
+    locked: 0
   - name: player
     uniqueID: 1559823863
     locked: 0
