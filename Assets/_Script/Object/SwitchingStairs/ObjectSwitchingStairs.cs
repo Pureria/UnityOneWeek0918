@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
 
 namespace MorseGame.Object
 {
@@ -15,6 +16,7 @@ namespace MorseGame.Object
         [SerializeField]
         private GameObject SwitchingStairs;
 
+        [SerializeField] private SpriteRenderer _StairSprite;
         private float ChangeStartTime;
 
         protected override void Start()
@@ -34,6 +36,12 @@ namespace MorseGame.Object
 
             if (NowState) SwitchingStairs.SetActive(true);
             else SwitchingStairs.SetActive(false);
+
+            float alpha = 0.0f;
+            if (NowState) alpha = 1.0f;
+            else alpha = 0.5f;
+            //DOTween.ToAlpha(() => _StairSprite.color, color => _StairSprite.color = color, alpha, SwitchingStairsChangeTime);
+            _StairSprite.DOFade(alpha, SwitchingStairsChangeTime).Play();
         }
 
         public override void LogicUpdate()

@@ -10,7 +10,7 @@ namespace MorseGame.Player
         [SerializeField] private float speed = 1.0f;
         [SerializeField] private bool isRight = true;
         [SerializeField] private float _CheckFrontDistance = 1.0f;
-        [SerializeField] private float _CheckGroundDistance = 0.2f;
+        [SerializeField] private float _CheckGroundRadius = 0.2f;
         [SerializeField] private Transform _CheckFrontTran;
         [SerializeField] private Transform _CheckGroundTran;
 
@@ -50,9 +50,7 @@ namespace MorseGame.Player
             }
 
             //地面方向の確認
-            origin = _CheckGroundTran.position;
-            direction = transform.up * -1;
-            if (CheckDistance(origin, direction, _CheckGroundDistance))
+            if (CheckGround())
             {
                 //落下状態から着地状態に遷移
                 if(!isGround && _AnimationController.NowCurrent == PlayerAnimation.fall)
@@ -102,10 +100,7 @@ namespace MorseGame.Player
             Vector3 to = _CheckFrontTran.position;
             to.x += _CheckFrontDistance * (isRight ? 1 : -1);
             Gizmos.DrawLine(_CheckFrontTran.position, to);
-
-            to = _CheckGroundTran.position;
-            to.y -= _CheckGroundDistance;
-            Gizmos.DrawLine(_CheckGroundTran.position, to);
+            Gizmos.DrawSphere(_CheckGroundTran.position, _CheckGroundRadius);
         }
 
         private bool CheckDistance(Vector2 origin,Vector2 direction,float distance)
@@ -125,6 +120,20 @@ namespace MorseGame.Player
                 }
             }
 
+            return ret;
+        }
+
+        private bool CheckGround()
+        {
+            bool ret = false;
+            Collider2D[] hits = Physics2D.OverlapCircleAll(_CheckGroundTran.position, _CheckGroundRadius);
+            foreach (Collider2D hit in hits)
+            {
+                if (!hit.isTrigger && hit.transform != this.transform)
+                {
+                    ret = true;
+                }
+            }
             return ret;
         }
 
