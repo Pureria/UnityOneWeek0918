@@ -61,6 +61,7 @@ namespace MorseGame.StartUp
             pc.OnAddMorseAction     += gameUI.PlayerCanvas.AddText;
             pc.OnClearMorseAction   += gameUI.PlayerCanvas.ClearText;
             pc.OnDelOneMorseAction  += gameUI.PlayerCanvas.DeleteBackText;
+            pc.OnNowMorseInputText  += gameUI.PlayerCanvas.NowInput;
 
             mapInfo.GameManager.OnGameStartAction   += pNPC.StartGame;
             mapInfo.GameManager.OnGameStartAction   += gameUI.GameStart;
