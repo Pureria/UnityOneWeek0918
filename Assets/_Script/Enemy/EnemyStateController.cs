@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStateController : MonoBehaviour
 {
-    enum EnemyState
+    public enum EnemyState
     {
         Idle,
         Walk,
@@ -14,7 +14,7 @@ public class EnemyStateController : MonoBehaviour
     }
 
     EnemyState currentState = EnemyState.Idle;  //Enemyの現在の状態、初期値はIdleにしてある
-    private bool stateEnter = true;
+    private bool stateEnter = true;     //Stateが切り替わったときに一度だけ処理を行うときに使う
 
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private bool isRight = true;
@@ -32,22 +32,75 @@ public class EnemyStateController : MonoBehaviour
     private void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
+        CheckRotation();
+        isGround = false;
+        isTouchGround = false;
     }
 
     private void Update()
     {
+        Debug.Log(currentState);
+
         //前方向の確認
         Vector2 origin = _CheckFrontTran.position;
-        Vector2 direciton = transform.right;
-        if 
-        
+        Vector2 direction = transform.right;
+        if (CheckDistance(origin, direction, _CheckFrontDistance))
+        {
+            isRight = !isRight;
+            CheckRotation();
+        }
 
-        switch (currentState)
+        //地面方向の確認
+        origin = _CheckGroundTran.position;
+        direction = transform.up * -1;
+        if (CheckDistance(origin, direction, _CheckGroundDistance))
+        {
+            isGround = true;
+            isTouchGround = true;
+        }
+        else
+        {
+            isGround = false;
+            isTouchGround= false;
+        }
+
+
+            switch (currentState)
         {
             case EnemyState.Walk:
-                if (myRB.velocity.y >= 0 && !)
+                if (myRB.velocity.y > 0 && !isGround)
                 {
-                    
+                    ChangeState(EnemyState.Jump);
+                    AnimationChanged(EnemyState.Jump);
+                    return;
+                }
+                else if (myRB.velocity.y < 0 && !isGround)
+                {
+                    ChangeState(EnemyState.Fall);
+                    AnimationChanged(EnemyState.Fall);
+                    return;
+                }
+                else return;
+
+            case EnemyState.Jump:
+                {
+                    if (myRB.velocity.y < 0 && !isGround)
+                    {
+                        ChangeState(EnemyState.Fall);
+                        AnimationChanged(EnemyState.Fall);
+                        return;
+                    }
+                }
+                break;
+
+            case EnemyState.Fall:
+                { 
+                    if (isTouchGround)
+                    {
+                        ChangeState(EnemyState.Walk);
+                        AnimationChanged(EnemyState.Walk);
+                        return;
+                    }
                 }
                 break;
         }
@@ -55,8 +108,11 @@ public class EnemyStateController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 move = new Vector2(speed * (isRight ? 1 : -1), myRB.velocity.y);
-        myRB.velocity = move;
+        if (currentState == EnemyState.Walk)
+        {
+            Vector2 move = new Vector2(speed * (isRight ? 1 : -1), myRB.velocity.y);
+            myRB.velocity = move;
+        }
     }
     
     private void ChangeState(EnemyState newState)
@@ -68,6 +124,8 @@ public class EnemyStateController : MonoBehaviour
     public void StartGame()
     {
         ChangeState(EnemyState.Walk);
+        AnimationChanged(EnemyState.Walk);
+
         myRB = GetComponent<Rigidbody2D>();
         CheckRotation();
     }
@@ -87,8 +145,12 @@ public class EnemyStateController : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Vector3 to = _CheckFrontTran.position;
-        to.x += _CheckFrontDistance * (isRight ? -1 : 1);
+        to.x += _CheckFrontDistance * (isRight ? 1 : -1);
         Gizmos.DrawLine(_CheckFrontTran.position, to);
+
+        to = _CheckGroundTran.position;
+        to.y -= _CheckGroundDistance;
+        Gizmos.DrawLine(_CheckGroundTran.position, to);
     }
 
     private bool CheckDistance(Vector2 origin, Vector2 direction, float distance)
@@ -118,6 +180,11 @@ public class EnemyStateController : MonoBehaviour
         Vector3 rot = transform.eulerAngles;
         rot.y = dir;
         transform.eulerAngles = rot;
+    }
+
+    public void AnimationChanged(EnemyState afterTransition)
+    {
+
     }
 
 }
