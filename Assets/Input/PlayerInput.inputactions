@@ -59,6 +59,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Title",
+            "id": "834d4e94-618c-4b7d-be02-b14542825bd1",
+            "actions": [
+                {
+                    "name": "MorseInput",
+                    "type": "Button",
+                    "id": "ab33f011-b1e2-4fde-bba5-767ed3a6fbfa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9e1bfc9a-136b-4539-a3e6-0935a296108b",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard & Mouse",
+                    "action": "MorseInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
