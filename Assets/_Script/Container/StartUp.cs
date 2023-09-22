@@ -43,21 +43,29 @@ namespace MorseGame.StartUp
             GameObject InstantMap = Instantiate(data.MapPrefab);
             GameObject InstantPlayer = Instantiate(data.PlayerPrefab);
             GameObject InstantPlayerNPC = Instantiate(data.PlayerNPCPrefab);
-            GameObject InstantPlayerUI = Instantiate(data.PlayerUIPrefab);
+            GameObject InstantGameUI = Instantiate(data.GameUIPrefab);
             MapInfo mapInfo = null;
             PlayerController pc = null;
-            PlayerCanvas pUi = null;
+            PlayerNPC pNPC = null;
+            GameCanvas gameUI = null;
 
             if (!InstantMap.TryGetComponent<MapInfo>(out mapInfo))          Debug.LogError("マップのプレハブにMapInfoがありません。");
             if (!InstantPlayer.TryGetComponent<PlayerController>(out pc))   Debug.LogError("プレイヤーのプレハブにPlayerControllerがありません。");
-            if (!InstantPlayerUI.TryGetComponent<PlayerCanvas>(out pUi))    Debug.LogError("プレイヤーUIプレハブにPlayerCanvasがありません。");
+            if (!InstantPlayerNPC.TryGetComponent<PlayerNPC>(out pNPC))   Debug.LogError("プレイヤーNPCのプレハブにPlayerNPCがありません。");
+            if (!InstantGameUI.TryGetComponent<GameCanvas>(out gameUI))    Debug.LogError("ゲームUIプレハブにGameCanvasがありません。");
 
             pc.OnSendMorseInput     += mapInfo.ObjectManager.ReceiveMorseInput;
+            pc.OnSendMorseInput     += mapInfo.GameManager.ReceiveMorseInput;
             pc.OnShowObjectUI       += mapInfo.ObjectManager.ReceiveShowMorseUI;
             pc.OnHideObjectUI       += mapInfo.ObjectManager.ReceiveHideMorseUI;
-            pc.OnAddMorseAction     += pUi.AddText;
-            pc.OnClearMorseAction   += pUi.ClearText;
-            pc.OnDelOneMorseAction  += pUi.DeleteBackText;
+            pc.OnAddMorseAction     += gameUI.PlayerCanvas.AddText;
+            pc.OnClearMorseAction   += gameUI.PlayerCanvas.ClearText;
+            pc.OnDelOneMorseAction  += gameUI.PlayerCanvas.DeleteBackText;
+
+            mapInfo.GameManager.OnGameStartAction   += pNPC.StartGame;
+            mapInfo.GameManager.OnGameStartAction   += gameUI.GameStart;
+            mapInfo.GameManager.OnGameEndAction     += pNPC.EndGame;
+
             InstantPlayerNPC.transform.position = mapInfo.PlayerSpawnPosition.position;
         }
     }

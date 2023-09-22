@@ -13,7 +13,7 @@ namespace MorseGame.Map
         public GameObject MapPrefab;
         public GameObject PlayerPrefab;
         public GameObject PlayerNPCPrefab;
-        public GameObject PlayerUIPrefab;
+        public GameObject GameUIPrefab;
         
         public StageBinaryData GetStageBinaryData()
         {
@@ -22,7 +22,7 @@ namespace MorseGame.Map
             string mapPath = ExtractPath(AssetDatabase.GetAssetPath(MapPrefab), pattern);
             string PlayerPath = ExtractPath(AssetDatabase.GetAssetPath(PlayerPrefab), pattern);
             string PlayerNPCPath = ExtractPath(AssetDatabase.GetAssetPath(PlayerNPCPrefab), pattern);
-            string PlayerUIPath = ExtractPath(AssetDatabase.GetAssetPath(PlayerUIPrefab), pattern);
+            string PlayerUIPath = ExtractPath(AssetDatabase.GetAssetPath(GameUIPrefab), pattern);
             return new StageBinaryData(mapPath, PlayerPath, PlayerNPCPath, PlayerUIPath, this.name);
         }
 
@@ -31,7 +31,7 @@ namespace MorseGame.Map
             MapPrefab = Resources.Load<GameObject>(data.MapPrefabPath);
             PlayerPrefab = Resources.Load<GameObject>(data.PlayerPrefabPath);
             PlayerNPCPrefab = Resources.Load<GameObject>(data.PlayerNPCPrefabPath);
-            PlayerUIPrefab = Resources.Load<GameObject>(data.PlayerUIPrefabPath);
+            GameUIPrefab = Resources.Load<GameObject>(data.GameUIPrefabPath);
             return this;
         }
 
@@ -58,14 +58,14 @@ namespace MorseGame.Map
             MapPrefabPath = mapPath;
             PlayerPrefabPath = PlayerPath;
             PlayerNPCPrefabPath = PlayerNPCPath;
-            PlayerUIPrefabPath = PlayerUIPath;
+            GameUIPrefabPath = PlayerUIPath;
             StageName = name;
         }
 
         public string MapPrefabPath = "";
         public string PlayerPrefabPath = "";
         public string PlayerNPCPrefabPath = "";
-        public string PlayerUIPrefabPath = "";
+        public string GameUIPrefabPath = "";
         public string StageName = "";
     }
 }

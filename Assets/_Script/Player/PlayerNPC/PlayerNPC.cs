@@ -33,9 +33,9 @@ namespace MorseGame.Player
             CheckRotation();
             isGround = false;
             isTouchGround = false;
-            _AnimationController.Initialize(_PlayerAC, _InitAnimation);
+            _AnimationController.Initialize(_PlayerAC, _InitAnimation, false);
 
-            if (_DebugInGame) SetisInGame(true);
+            if (_DebugInGame) StartGame();
         }
 
         private void Update()
@@ -55,12 +55,15 @@ namespace MorseGame.Player
             if (CheckDistance(origin, direction, _CheckGroundDistance))
             {
                 //óéâ∫èÛë‘Ç©ÇÁíÖínèÛë‘Ç…ëJà⁄
-                if(!isGround && !isTouchGround)
+                if(!isGround && _AnimationController.NowCurrent == PlayerAnimation.fall)
                 {
                     isTouchGround = true;
                     _AnimationController.ChangeAnimationBool(PlayerAnimation.onGround);
                 }
-                //isGround = true;
+                else if(_AnimationController.NowCurrent != PlayerAnimation.onGround)
+                {
+                    isGround = true;
+                }
             }
             else
             {
@@ -134,10 +137,18 @@ namespace MorseGame.Player
             transform.eulerAngles = rot;
         }
 
-        public void SetisInGame(bool flg)
+        public void StartGame()
         {
-            isInGame = flg;
+            isInGame = true;
+            _AnimationController.SetCanChangeAnim(true);
             _AnimationController.ChangeAnimationBool(PlayerAnimation.walk);
+        }
+
+        public void EndGame()
+        {
+            isInGame = false;
+            _AnimationController.SetCanChangeAnim(false);
+            _AnimationController.ChangeAnimationBool(PlayerAnimation.idle);
         }
     }
 }

@@ -151,7 +151,7 @@ MonoBehaviour:
   _AnimationController: {fileID: 5894991680078972674}
   _PlayerAC: {fileID: 6091348051228724949}
   _InitAnimation: 0
-  _DebugInGame: 1
+  _DebugInGame: 0
 --- !u!1 &5487034507605781558
 GameObject:
   m_ObjectHideFlags: 0
