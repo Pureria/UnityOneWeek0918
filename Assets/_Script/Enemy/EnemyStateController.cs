@@ -9,14 +9,14 @@ namespace MorseGame.Enemy
     {
         public enum EnemyState
         {
-            Idle,
-            Walk,
-            Jump,
-            Fall,
-            OnGround
+            idle,
+            walk,
+            jump,
+            fall,
+            onGround
         }
 
-        EnemyState currentState = EnemyState.Idle;  //Enemyの現在の状態、初期値はIdleにしてある
+        EnemyState currentState = EnemyState.idle;  //Enemyの現在の状態、初期値はIdleにしてある
         private bool stateEnter = true;     //Stateが切り替わったときに一度だけ処理を行うときに使う
 
         [SerializeField] private float speed = 1.0f;
@@ -51,6 +51,7 @@ namespace MorseGame.Enemy
             isGround = false;
             isTouchGround = false;
             isFinishedAnimation = false;
+            AnimationChanged(currentState);
         }
 
         private void Update()
@@ -81,49 +82,49 @@ namespace MorseGame.Enemy
 
                 switch (currentState)
             {
-                case EnemyState.Walk:
+                case EnemyState.walk:
                     if (myRB.velocity.y > 0 && !isGround)
                     {
-                        ChangeState(EnemyState.Jump);
-                        AnimationChanged(EnemyState.Jump);
+                        ChangeState(EnemyState.jump);
+                        AnimationChanged(EnemyState.jump);
                         return;
                     }
                     else if (myRB.velocity.y < 0 && !isGround)
                     {
-                        ChangeState(EnemyState.Fall);
-                        AnimationChanged(EnemyState.Fall);
+                        ChangeState(EnemyState.fall);
+                        AnimationChanged(EnemyState.fall);
                         return;
                     }
                     else return;
 
-                case EnemyState.Jump:
+                case EnemyState.jump:
                     {
                         if (myRB.velocity.y < 0 && !isGround)
                         {
-                            ChangeState(EnemyState.Fall);
-                            AnimationChanged(EnemyState.Fall);
+                            ChangeState(EnemyState.fall);
+                            AnimationChanged(EnemyState.fall);
                             return;
                         }
                     }
                     break;
 
-                case EnemyState.Fall:
+                case EnemyState.fall:
                     { 
                         if (isTouchGround)
                         {
-                            ChangeState(EnemyState.OnGround);
-                            AnimationChanged(EnemyState.OnGround);
+                            ChangeState(EnemyState.onGround);
+                            AnimationChanged(EnemyState.onGround);
                             return;
                         }
                     }
                     break;
 
-                case EnemyState.OnGround:
+                case EnemyState.onGround:
                     if(isFinishedAnimation)
                     {
                         isFinishedAnimation = false;
-                        ChangeState(EnemyState.Walk);
-                        AnimationChanged(EnemyState.Walk);
+                        ChangeState(EnemyState.walk);
+                        AnimationChanged(EnemyState.walk);
                     }
                     break;
             }
@@ -131,7 +132,7 @@ namespace MorseGame.Enemy
 
         private void FixedUpdate()
         {
-            if (currentState == EnemyState.Walk)
+            if (currentState == EnemyState.walk)
             {
                 Vector2 move = new Vector2(speed * (isRight ? 1 : -1), myRB.velocity.y);
                 myRB.velocity = move;
@@ -146,8 +147,8 @@ namespace MorseGame.Enemy
 
         public void StartGame()
         {
-            ChangeState(EnemyState.Walk);
-            AnimationChanged(EnemyState.Walk);
+            ChangeState(EnemyState.walk);
+            AnimationChanged(EnemyState.walk);
 
             myRB = GetComponent<Rigidbody2D>();
             CheckRotation();
@@ -155,7 +156,7 @@ namespace MorseGame.Enemy
 
         public void EndGame()
         {
-            ChangeState(EnemyState.Idle);
+            ChangeState(EnemyState.idle);
         }
 
         public void FinishedAnimation()
