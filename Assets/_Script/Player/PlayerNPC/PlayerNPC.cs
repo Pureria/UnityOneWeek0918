@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -21,6 +22,8 @@ namespace MorseGame.Player
 
         [Header("デバッグ用（使わない場合はすべてfalse）")]
         [SerializeField] private bool _DebugInGame;
+
+        public Action OnDeadAction;
 
         private Rigidbody2D myRB;
 
@@ -114,7 +117,7 @@ namespace MorseGame.Player
             foreach (RaycastHit2D hit in hits)
             {
                 Collider2D collider = hit.collider;
-                if (!collider.isTrigger && hit.transform != this.transform)
+                if (!collider.isTrigger && !collider.CompareTag("Player") && !collider.CompareTag("Enemy"))
                 {
                     ret = true;
                 }
@@ -158,6 +161,11 @@ namespace MorseGame.Player
             isInGame = false;
             _AnimationController.ChangeAnimationBool(PlayerAnimation.idle);
             _AnimationController.SetCanChangeAnim(false);
+        }
+
+        public void Dead()
+        {
+            OnDeadAction?.Invoke();
         }
     }
 }

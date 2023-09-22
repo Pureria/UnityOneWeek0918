@@ -102,8 +102,11 @@ namespace MorseGame.Player
                 else if(morseCancelLong >= _MorseOneElaseTime)
                 {
                     nowCount--;
-                    _InputMorseData.RemoveAt(_InputMorseData.Count - 1);
-                    OnDelOneMorseAction?.Invoke(1);
+                    if(_InputMorseData.Count >= 1)
+                    {
+                        _InputMorseData.RemoveAt(_InputMorseData.Count - 1);
+                        OnDelOneMorseAction?.Invoke(1);
+                    }
                 }
                 //’Ç‰Á
                 else
