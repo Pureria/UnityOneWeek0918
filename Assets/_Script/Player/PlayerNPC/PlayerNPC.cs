@@ -147,8 +147,8 @@ namespace MorseGame.Player
         public void EndGame()
         {
             isInGame = false;
-            _AnimationController.SetCanChangeAnim(false);
             _AnimationController.ChangeAnimationBool(PlayerAnimation.idle);
+            _AnimationController.SetCanChangeAnim(false);
         }
     }
 }

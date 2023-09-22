@@ -30,11 +30,22 @@ namespace MorseGame.Manager
             OnGameStartAction?.Invoke();
         }
 
-        public void GameEnd()
+        public void GameClear()
+        {
+            GameEnd();
+        }
+
+        public void GameOver()
+        {
+            GameEnd();
+        }
+
+        private void GameEnd()
         {
             _nowGame = false;
             _EndGame = true;
             OnGameEndAction?.Invoke();
+            Debug.Log("ÉQÅ[ÉÄèIóπ");
         }
 
         public void ReceiveMorseInput(List<MorseData> inputMorseData)
