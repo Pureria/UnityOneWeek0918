@@ -33,6 +33,7 @@ namespace MorseGame.Player
         public Action<int> OnAddMorseAction;
         public Action OnClearMorseAction;
         public Action<int> OnDelOneMorseAction;
+        public Action<string> OnNowMorseInputText;
 
         private void Start()
         {
@@ -87,14 +88,15 @@ namespace MorseGame.Player
                 MorseData addData = new MorseData();
                 int morse = 1;
                 float morseCancelLong = _InputController.MorseInputCanceledTime - _InputController.MorseInputStartTime;
+                OnNowMorseInputText?.Invoke("");
                 //全消し
                 if(morseCancelLong >= _MorseAllElaseTime)
                 {
                     nowCount = 0;
                     _InputMorseData.Clear();
                     OnClearMorseAction?.Invoke();
-                    nowInput = false;
-                    return;
+                    //nowInput = false;
+                    //return;
                 }
                 //一文字消し
                 else if(morseCancelLong >= _MorseOneElaseTime)
@@ -113,6 +115,32 @@ namespace MorseGame.Player
                     nowCount++;
                 }                
                 nowInput = false;
+            }
+
+            if(nowInput)
+            {
+                float checkTime = Time.time - _InputController.MorseInputStartTime;
+
+                //全消し入力
+                if (checkTime > _MorseAllElaseTime)
+                {
+                    OnNowMorseInputText?.Invoke("全消");
+                }
+                //一文字消し入力
+                else if (checkTime > _MorseOneElaseTime)
+                {
+                    OnNowMorseInputText?.Invoke("一消");
+                }
+                //ー入力
+                else if (checkTime > _MorseLengthTime)
+                {
+                    OnNowMorseInputText?.Invoke("ー");
+                }
+                //・入力
+                else
+                {
+                    OnNowMorseInputText?.Invoke("・");
+                }
             }
         }
 

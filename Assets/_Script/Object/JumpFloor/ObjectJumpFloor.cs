@@ -38,19 +38,19 @@ namespace MorseGame.Object
             base.LogicUpdate();
 
             if (!NowState) return;
-            if (CheckPlayer.IsTouchPlayer && CoolTime < Time.time)
+            if (CheckPlayer.IsTouchAny && CoolTime < Time.time)
             {
-                Rigidbody2D pbody = CheckPlayer.player.GetComponent<Rigidbody2D>();
-                Vector3 pvelo = pbody.velocity;
+                foreach(Transform tran in CheckPlayer.TouchTrances)
+                {
+                    Rigidbody2D body = null;
+                    if (!tran.TryGetComponent<Rigidbody2D>(out body)) return;
 
-                pvelo.y = JumpForce;
-                pbody.velocity = pvelo;
-
+                    Vector3 velo = body.velocity;
+                    velo.y = JumpForce;
+                    body.velocity = velo;
+                }
                 CoolTime = Time.time + CoolTimeSec;
             }
-
-
-
         }
 
     }
