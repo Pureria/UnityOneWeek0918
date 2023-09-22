@@ -330,6 +330,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 540110820717813980, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 540110820717813980, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 540110820717813980, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 60.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 540110820717813980, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -125.5
+      objectReference: {fileID: 0}
     - target: {fileID: 704952158443661290, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
       propertyPath: m_Name
       value: GameSceneCanvas
@@ -337,6 +353,22 @@ PrefabInstance:
     - target: {fileID: 704952158443661290, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982697963240450309, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 982697963240450309, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 982697963240450309, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 60.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 982697963240450309, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -284.5
       objectReference: {fileID: 0}
     - target: {fileID: 4810340088775290178, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
       propertyPath: m_AnchorMax.y

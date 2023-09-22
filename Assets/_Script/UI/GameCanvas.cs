@@ -15,6 +15,7 @@ namespace MorseGame.UI
 
         public PlayerCanvas PlayerCanvas { get { return _pCanvas; } }
         public MenuPopUP GameClearPopup { get { return _GameClearPopup; } }
+        public MenuPopUP GameOverPopup { get { return _GameOverPopup; } }
 
         public void GameStart()
         {

@@ -66,7 +66,9 @@ namespace MorseGame.StartUp
             mapInfo.GameManager.OnGameStartAction   += gameUI.GameStart;
             mapInfo.GameManager.OnGameEndAction     += pNPC.EndGame;
             mapInfo.GameManager.OnGameClearAction += gameUI.GameClearPopup.Show;
+            mapInfo.GameManager.OnGameOverAction += gameUI.GameOverPopup.Show;
             mapInfo.GoalPoint.OnGoalInPlayer += mapInfo.GameManager.GameClear;
+            mapInfo.FallGround.OnGameOver += mapInfo.GameManager.GameOver;
 
             InstantPlayerNPC.transform.position = mapInfo.PlayerSpawnPosition.position;
         }
