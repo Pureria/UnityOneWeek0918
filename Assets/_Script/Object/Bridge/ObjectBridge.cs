@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 namespace MorseGame.Object
 {
@@ -31,6 +32,17 @@ namespace MorseGame.Object
             _RBridgeStopCollider.enabled = setCollider;
             _LBridgeCollider.enabled = !setCollider;
             _RBridgeCollider.enabled = !setCollider;
+
+            if(NowState)
+            {
+                _LBridgeTran.eulerAngles = new Vector3(_LBridgeTran.eulerAngles.x, _LBridgeTran.eulerAngles.y, 0);
+                _RBridgeTran.eulerAngles = new Vector3(_RBridgeTran.eulerAngles.x, _RBridgeTran.eulerAngles.y, 0);
+            }
+            else
+            {
+                _LBridgeTran.eulerAngles = new Vector3(_LBridgeTran.eulerAngles.x, _LBridgeTran.eulerAngles.y, 90);
+                _RBridgeTran.eulerAngles = new Vector3(_RBridgeTran.eulerAngles.x, _RBridgeTran.eulerAngles.y, -90);
+            }
         }
 
         public override void LogicUpdate()
