@@ -9,6 +9,7 @@ namespace MorseGame.Player
     public class PlayerCanvas : MonoBehaviour
     {
         [SerializeField] TextMeshProUGUI _MorseInputText;
+        [SerializeField] TextMeshProUGUI _NowInputText;
         private string _CurrentText = "";
 
         public void AddText(int morse)
@@ -37,10 +38,15 @@ namespace MorseGame.Player
             _CurrentText = _CurrentText.Remove(_CurrentText.Length - delBackCount);
             ChangeText();
         }
+        public void NowInput(string text)
+        {
+            _NowInputText.text = text;
+        }
 
         private void ChangeText()
         {
             _MorseInputText.text = _CurrentText;
         }
+
     }
 }

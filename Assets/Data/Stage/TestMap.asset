@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MapPrefab: {fileID: 4641575832605419425, guid: a56c61d0d9b8deb4581a3a1d02a3b728, type: 3}
   PlayerPrefab: {fileID: 2794013007291207979, guid: 0c816b890298d57438f74b93b9fed924, type: 3}
-  PlayerNPCPrefab: {fileID: 8713233581681915026, guid: fee95b7347ff4584abaef3d02976fa2c, type: 3}
-  PlayerUIPrefab: {fileID: 911356342975387958, guid: 48b10496e0f26aa4a9b40c769253b97b, type: 3}
+  PlayerNPCPrefab: {fileID: 3482369632416643733, guid: f4e084be35d41fa44ae7b86cc857cf5b, type: 3}
+  GameUIPrefab: {fileID: 704952158443661290, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}
