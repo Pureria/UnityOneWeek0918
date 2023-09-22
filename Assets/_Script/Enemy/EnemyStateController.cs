@@ -89,7 +89,7 @@ namespace MorseGame.Enemy
                         AnimationChanged(EnemyState.jump);
                         return;
                     }
-                    else if (myRB.velocity.y < 0 && !isGround)
+                    else if (!isGround)
                     {
                         ChangeState(EnemyState.fall);
                         AnimationChanged(EnemyState.fall);
@@ -157,6 +157,7 @@ namespace MorseGame.Enemy
         public void EndGame()
         {
             ChangeState(EnemyState.idle);
+            AnimationChanged(currentState);
         }
 
         public void FinishedAnimation()

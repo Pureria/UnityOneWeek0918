@@ -210,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3475925571563767205, guid: cdbbbb374ebb9484bb3fdc6c98f8fa1f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4255954832929509288, guid: cdbbbb374ebb9484bb3fdc6c98f8fa1f, type: 3}
       propertyPath: m_RootOrder
@@ -572,6 +572,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4898247039006766035, guid: 0ca6d7c97b50f6c49afefb535d7a5611, type: 3}
+      propertyPath: _DebugStageData
+      value: 
+      objectReference: {fileID: 11400000, guid: a1b1e6d5b6d3365449b0e8ecd66cea41, type: 2}
     - target: {fileID: 5598778235727764605, guid: 0ca6d7c97b50f6c49afefb535d7a5611, type: 3}
       propertyPath: m_Name
       value: StageSelecter
