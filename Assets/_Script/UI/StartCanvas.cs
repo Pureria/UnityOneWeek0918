@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace MorseGame.UI
 {
@@ -26,12 +27,28 @@ namespace MorseGame.UI
             }
         }
 
-        private void Hide()
+        private IEnumerator Hide()
         {
-            foreach (Image img in _FillImages)
+            for (int i = _FillImages.Count - 1; i >= 0; i--)
             {
-                img.DOFillAmount(1f, _FillTime).SetEase(Ease.OutCubic).Play();
+                _FillImages[i].DOFillAmount(1f, _FillTime).SetEase(Ease.OutCubic).Play();
+                yield return new WaitForSeconds(_ShiftTime);
             }
         }
+
+        private IEnumerator Hide(Action endAction)
+        {
+            for(int i = _FillImages.Count - 1;i >= 0;i--)
+            {
+                _FillImages[i].DOFillAmount(1f, _FillTime).SetEase(Ease.OutCubic).Play();
+                yield return new WaitForSeconds(_ShiftTime);
+            }
+            yield return new WaitForSeconds(_ShiftTime + 1.0f);
+            endAction();
+        }
+
+        public void ShowUI() => StartCoroutine(Show());
+        public void HideUI() => StartCoroutine(Hide());
+        public void HideUI(Action endAction) => StartCoroutine(Hide(endAction));
     }    
 }

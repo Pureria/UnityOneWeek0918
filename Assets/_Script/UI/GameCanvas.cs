@@ -4,15 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameCanvas : MonoBehaviour
+namespace MorseGame.UI
 {
-    [SerializeField] private PlayerCanvas _pCanvas;
-    [SerializeField] private MenuPopUP _StartPopup;
-
-    public PlayerCanvas PlayerCanvas { get { return _pCanvas; } }
-
-    public void GameStart()
+    public class GameCanvas : MonoBehaviour
     {
-        _StartPopup.Hide();
+        [SerializeField] private PlayerCanvas _pCanvas;
+        [SerializeField] private MenuPopUP _StartPopup;
+
+        public PlayerCanvas PlayerCanvas { get { return _pCanvas; } }
+
+        public void GameStart()
+        {
+            _StartPopup.Hide();
+        }
     }
 }
