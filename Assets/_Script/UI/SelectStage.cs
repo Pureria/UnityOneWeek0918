@@ -3,7 +3,6 @@ using MorseGame.StartUp;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace MorseGame.UI
 {
@@ -11,7 +10,6 @@ namespace MorseGame.UI
     {
         [SerializeField] StageSelecter _StageSelecter;
         [SerializeField] StartCanvas _StartCanvas;
-        [SerializeField] private string _StageSceneName = "";
         public void Selectmap(StageData data)
         {
             if(data == null)
@@ -21,12 +19,7 @@ namespace MorseGame.UI
             }
 
             _StageSelecter.SaveStageFile(data.GetStageBinaryData());
-            _StartCanvas.HideUI(ChangeGameScene);
-        }
-
-        private void ChangeGameScene()
-        {
-            SceneManager.LoadScene(_StageSceneName);
+            _StartCanvas.HideUIAndMoveGame();
         }
     }
 }

@@ -13,6 +13,8 @@ namespace MorseGame.Manager
 
         public Action OnGameStartAction;
         public Action OnGameEndAction;
+        public Action OnGameClearAction;
+        public Action OnGameOverAction;
 
         [Header("開始時に入力するモールス (0 = ・)　　(1 = ー)")]
         [SerializeField] private List<MorseData> _StartMorseData = new List<MorseData>();
@@ -32,11 +34,13 @@ namespace MorseGame.Manager
 
         public void GameClear()
         {
+            OnGameClearAction?.Invoke();
             GameEnd();
         }
 
         public void GameOver()
         {
+            OnGameOverAction?.Invoke();
             GameEnd();
         }
 

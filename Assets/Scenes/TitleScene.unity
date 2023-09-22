@@ -2285,7 +2285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _StageSelecter: {fileID: 744260775}
   _StartCanvas: {fileID: 2023442816}
-  _StageSceneName: GameScene
 --- !u!114 &1224535618
 MonoBehaviour:
   m_ObjectHideFlags: 0

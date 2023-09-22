@@ -10,8 +10,11 @@ namespace MorseGame.UI
     {
         [SerializeField] private PlayerCanvas _pCanvas;
         [SerializeField] private MenuPopUP _StartPopup;
+        [SerializeField] private MenuPopUP _GameClearPopup;
+        [SerializeField] private MenuPopUP _GameOverPopup;
 
         public PlayerCanvas PlayerCanvas { get { return _pCanvas; } }
+        public MenuPopUP GameClearPopup { get { return _GameClearPopup; } }
 
         public void GameStart()
         {

@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace MorseGame.UI
 {
@@ -13,6 +14,9 @@ namespace MorseGame.UI
         [SerializeField] private List<Image> _FillImages = new List<Image>();
         [SerializeField] private float _FillTime = 0.25f;
         [SerializeField] private float _ShiftTime = 0.2f;
+
+        [SerializeField] private string _TitleSceneName = "TitleScene";
+        [SerializeField] private string _GameSceneName = "GameScene";
         private void Start()
         {
             StartCoroutine(Show());
@@ -49,6 +53,7 @@ namespace MorseGame.UI
 
         public void ShowUI() => StartCoroutine(Show());
         public void HideUI() => StartCoroutine(Hide());
-        public void HideUI(Action endAction) => StartCoroutine(Hide(endAction));
+        public void HideUIAndMoveTitle() => StartCoroutine(Hide(() => SceneManager.LoadScene(_TitleSceneName)));
+        public void HideUIAndMoveGame() => StartCoroutine(Hide(() => SceneManager.LoadScene(_GameSceneName)));
     }    
 }
