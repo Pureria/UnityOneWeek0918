@@ -5112,7 +5112,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: "root/\u80F4_1/\u5DE6\u8155_1"
+    path: "root/\u80F4_1/\u5DE6\u8155_1/\u5DE6\u8098\u3055\u304D_1/\u3072\u3060\u308A\u304A\u3066\u3066"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5124,7 +5124,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: "root/\u80F4_1/\u5DE6\u8155_1"
+    path: "root/\u80F4_1/\u5DE6\u8155_1/\u5DE6\u8098\u3055\u304D_1/\u3072\u3060\u308A\u304A\u3066\u3066"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5136,43 +5136,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: "root/\u80F4_1/\u5DE6\u8155_1"
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: "root/\u80F4_1"
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: "root/\u80F4_1"
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: "root/\u80F4_1"
+    path: "root/\u80F4_1/\u5DE6\u8155_1/\u5DE6\u8098\u3055\u304D_1/\u3072\u3060\u308A\u304A\u3066\u3066"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5220,7 +5184,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: "root/\u80F4_1/\u5DE6\u8155_1/\u5DE6\u8098\u3055\u304D_1/\u3072\u3060\u308A\u304A\u3066\u3066"
+    path: "root/\u80F4_1"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5232,7 +5196,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: "root/\u80F4_1/\u5DE6\u8155_1/\u5DE6\u8098\u3055\u304D_1/\u3072\u3060\u308A\u304A\u3066\u3066"
+    path: "root/\u80F4_1"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5244,7 +5208,43 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: "root/\u80F4_1/\u5DE6\u8155_1/\u5DE6\u8098\u3055\u304D_1/\u3072\u3060\u308A\u304A\u3066\u3066"
+    path: "root/\u80F4_1"
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: "root/\u80F4_1/\u5DE6\u8155_1"
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: "root/\u80F4_1/\u5DE6\u8155_1"
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: "root/\u80F4_1/\u5DE6\u8155_1"
     classID: 4
     script: {fileID: 0}
     flags: 0
