@@ -1964,7 +1964,7 @@ MonoBehaviour:
         m_MethodName: Selectmap
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 1546ac432f3d8f44c9ac07fbbf2164a5, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: b93d5cc795a5e3d45a646478ccd79065, type: 2}
           m_ObjectArgumentAssemblyTypeName: MorseGame.Map.StageData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2233,7 +2233,7 @@ MonoBehaviour:
         m_MethodName: Selectmap
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 11400000, guid: 1546ac432f3d8f44c9ac07fbbf2164a5, type: 2}
           m_ObjectArgumentAssemblyTypeName: MorseGame.Map.StageData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
