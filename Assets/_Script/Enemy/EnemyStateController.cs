@@ -19,16 +19,15 @@ public class EnemyStateController : MonoBehaviour
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private bool isRight = true;
     [SerializeField] private float _CheckFrontDistance = 1.0f;
+    [SerializeField] private float _CheckGroundDistance = 0.2f;
     [SerializeField] private Transform _CheckFrontTran;
+    [SerializeField] private Transform _CheckGroundTran;
 
     private Rigidbody2D myRB;
 
+    private bool isGround;
+    private bool isTouchGround;
 
-    private void ChangeState(EnemyState newState)
-    {
-        currentState = newState;
-        stateEnter = false;
-    }
 
     private void Start()
     {
@@ -37,8 +36,11 @@ public class EnemyStateController : MonoBehaviour
 
     private void Update()
     {
-        CheckDistance();
-        CheckRotation();
+        //前方向の確認
+        Vector2 origin = _CheckFrontTran.position;
+        Vector2 direciton = transform.right;
+        if 
+        
 
         switch (currentState)
         {
@@ -55,6 +57,12 @@ public class EnemyStateController : MonoBehaviour
     {
         Vector2 move = new Vector2(speed * (isRight ? 1 : -1), myRB.velocity.y);
         myRB.velocity = move;
+    }
+    
+    private void ChangeState(EnemyState newState)
+    {
+        currentState = newState;
+        stateEnter = false;
     }
 
     public void StartGame()
@@ -83,25 +91,24 @@ public class EnemyStateController : MonoBehaviour
         Gizmos.DrawLine(_CheckFrontTran.position, to);
     }
 
-    private void CheckDistance()
+    private bool CheckDistance(Vector2 origin, Vector2 direction, float distance)
     {
         //現在isTriggerがついていないオブジェクトと接触したら処理実行になっているが
         //レイヤーで区別したほうが絶対良さそう(Prefabとか作っちゃってるから変更するのめんどくさい)
         //気が向いたら変更
-        Vector2 origin = _CheckFrontTran.position;
-        Vector2 direction = transform.right;
-
-        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, _CheckFrontDistance);
+        bool ret = false;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, distance);
 
         foreach (RaycastHit2D hit in hits)
         {
             Collider2D collider = hit.collider;
             if (!collider.isTrigger && hit.transform != this.transform)
             {
-                isRight = !isRight;
-                CheckRotation();
+                ret = true;
             }
         }
+
+        return ret;
     }
 
     private void CheckRotation()
