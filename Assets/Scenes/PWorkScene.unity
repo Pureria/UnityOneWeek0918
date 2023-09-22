@@ -640,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 4898247039006766035, guid: 0ca6d7c97b50f6c49afefb535d7a5611, type: 3}
       propertyPath: _DebugStageData
       value: 
-      objectReference: {fileID: 11400000, guid: a1b1e6d5b6d3365449b0e8ecd66cea41, type: 2}
+      objectReference: {fileID: 11400000, guid: b93d5cc795a5e3d45a646478ccd79065, type: 2}
     - target: {fileID: 5598778235727764605, guid: 0ca6d7c97b50f6c49afefb535d7a5611, type: 3}
       propertyPath: m_Name
       value: StageSelecter

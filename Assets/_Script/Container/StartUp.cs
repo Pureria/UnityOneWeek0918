@@ -62,6 +62,8 @@ namespace MorseGame.StartUp
             pc.OnDelOneMorseAction  += gameUI.PlayerCanvas.DeleteBackText;
             pc.OnNowMorseInputText  += gameUI.PlayerCanvas.NowInput;
 
+            pNPC.OnDeadAction       += mapInfo.GameManager.GameOver;
+
             mapInfo.GameManager.OnGameStartAction   += pNPC.StartGame;
             mapInfo.GameManager.OnGameStartAction   += gameUI.GameStart;
             mapInfo.GameManager.OnGameStartAction   += mapInfo.EnemyManager.GameStart;

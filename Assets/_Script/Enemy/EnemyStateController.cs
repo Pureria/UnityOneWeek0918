@@ -1,3 +1,4 @@
+using MorseGame.Player;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -186,7 +187,7 @@ namespace MorseGame.Enemy
             foreach (RaycastHit2D hit in hits)
             {
                 Collider2D collider = hit.collider;
-                if (!collider.isTrigger && hit.transform != this.transform)
+                if (!collider.isTrigger && !collider.CompareTag("Player") && !collider.CompareTag("Enemy"))
                 {
                     ret = true;
                 }
@@ -223,5 +224,15 @@ namespace MorseGame.Enemy
             OnChangeAnimation?.Invoke(afterTransition);
         }
 
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if(collision.transform.CompareTag("Player"))
+            {
+                if(collision.transform.TryGetComponent<PlayerNPC>(out PlayerNPC pNpc))
+                {
+                    pNpc.Dead();
+                }
+            }
+        }
     }
 }
