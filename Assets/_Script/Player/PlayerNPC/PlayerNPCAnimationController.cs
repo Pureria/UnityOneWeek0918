@@ -16,10 +16,12 @@ namespace MorseGame.Player
 
         public void Initialize(Animator animator,PlayerAnimation initAnimation,bool CanChangeAnimation)
         {
-            ChangeAnimationBool(_NowCurrent);
+            _CanChangeAnimation = true;
             _PlayerAC = animator;
             _NowCurrent = initAnimation;
             _IsAnimationFinished = false;
+            ChangeAnimationBool(_NowCurrent);
+
             _CanChangeAnimation = CanChangeAnimation;
         }
 
