@@ -69,8 +69,10 @@ namespace MorseGame.StartUp
             mapInfo.GameManager.OnGameStartAction   += pNPC.StartGame;
             mapInfo.GameManager.OnGameStartAction   += gameUI.GameStart;
             mapInfo.GameManager.OnGameStartAction   += mapInfo.EnemyManager.GameStart;
+            mapInfo.GameManager.OnGameStartAction   += mapInfo.ObjectManager.GameStart;
             mapInfo.GameManager.OnGameEndAction     += pNPC.EndGame;
             mapInfo.GameManager.OnGameEndAction     += mapInfo.EnemyManager.GameEnd;
+            mapInfo.GameManager.OnGameEndAction     += mapInfo.ObjectManager.GameEnd;
             mapInfo.GameManager.OnGameClearAction   += gameUI.GameClearPopup.Show;
             mapInfo.GameManager.OnGameOverAction    += gameUI.GameOverPopup.Show;
             mapInfo.GoalPoint.OnGoalInPlayer        += mapInfo.GameManager.GameClear;

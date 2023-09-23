@@ -13,6 +13,8 @@ namespace MorseGame.Object.Manager
 
         private List<ObjectBase> _ShowUIObject = new List<ObjectBase>();
 
+        private bool _NowGame = false;
+
         private void Update()
         {
             foreach(ObjectBase obj in _Objects)
@@ -39,6 +41,8 @@ namespace MorseGame.Object.Manager
 
         public void ReceiveMorseInput(List<MorseData> inputMorseData)
         {
+            if (!_NowGame) return;
+
             foreach(ObjectBase obj in _Objects)
             {
                 List<MorseData> checkData = obj.GetMorseData().MorseData;
@@ -95,5 +99,8 @@ namespace MorseGame.Object.Manager
                 }
             }
         }
+
+        public void GameStart() => _NowGame = true;
+        public void GameEnd() => _NowGame = false;
     }
 }
