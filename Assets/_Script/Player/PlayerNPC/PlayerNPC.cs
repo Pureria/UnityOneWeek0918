@@ -173,5 +173,7 @@ namespace MorseGame.Player
         {
             OnDeadAction?.Invoke();
         }
+
+        public void SetIsPlayerRight(bool isRight) => this.isRight = isRight;
     }
 }
