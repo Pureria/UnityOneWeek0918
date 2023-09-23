@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using DG.Tweening;
 
 namespace MorseGame.Object
 {
@@ -17,8 +18,13 @@ namespace MorseGame.Object
         private float CoolTimeSec;
         [SerializeField]
         private CheckUpPlayer CheckPlayer;
+        [SerializeField]
+        private float JumpFloorChangeTime;
+
+        [SerializeField] private SpriteRenderer _FloorSprite;
 
         private float CoolTime;
+        private float alpha = 0.5f;
 
         protected override void Start()
         {
@@ -26,11 +32,21 @@ namespace MorseGame.Object
 
             CoolTime = 0.0f;
             NowState = InitJumpFloor;
+
+            if (NowState) alpha = 1.0f;
+            else alpha = 0.5f;
+            //DOTween.ToAlpha(() => _StairSprite.color, color => _StairSprite.color = color, alpha, SwitchingStairsChangeTime);
+            _FloorSprite.DOFade(alpha, JumpFloorChangeTime).Play();
         }
 
         public override void ReceiveInteract()
         {
             base.ReceiveInteract();
+
+            if (NowState) alpha = 1.0f;
+            else alpha = 0.5f;
+            //DOTween.ToAlpha(() => _StairSprite.color, color => _StairSprite.color = color, alpha, SwitchingStairsChangeTime);
+            _FloorSprite.DOFade(alpha, JumpFloorChangeTime).Play();
         }
 
         public override void LogicUpdate()
