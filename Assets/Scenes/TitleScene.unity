@@ -5498,10 +5498,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1593669060112240298, guid: 0ef449a0d9ad2c748a738cf81dd1cce0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4071825452527409620, guid: 0ef449a0d9ad2c748a738cf81dd1cce0, type: 3}
       propertyPath: m_Camera
       value: 
