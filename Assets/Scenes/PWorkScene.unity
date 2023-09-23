@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3482369632416643733, guid: f4e084be35d41fa44ae7b86cc857cf5b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7547766443864013574, guid: f4e084be35d41fa44ae7b86cc857cf5b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -382,6 +382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage3
       objectReference: {fileID: 0}
+    - target: {fileID: 7419771530485901471, guid: 747b2c673a009b24db760b8fd899ca78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -527,10 +531,6 @@ PrefabInstance:
     - target: {fileID: 1883080980931511951, guid: 86d09023b4de5c94e8f395e177ba9c2e, type: 3}
       propertyPath: m_Name
       value: Stage2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1883080980931511951, guid: 86d09023b4de5c94e8f395e177ba9c2e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5314751021126191785, guid: 86d09023b4de5c94e8f395e177ba9c2e, type: 3}
       propertyPath: m_RootOrder
