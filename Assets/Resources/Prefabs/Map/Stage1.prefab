@@ -103,6 +103,7 @@ MonoBehaviour:
   _FallGround: {fileID: 1062539502874789318}
   _EnemyManager: {fileID: 1610661839067873206}
   _IsPlayerRight: 1
+  _MainCamera: {fileID: 4374214100271391684}
 --- !u!1 &2177381252816303861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,7 +3360,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.5, y: 17.5}
+    oldSize: {x: 1.0294118, y: 1.0294118}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4040,6 +4041,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f037d7dc39550408a93069c708c50a, type: 3}
+--- !u!20 &4374214100271391684 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4700447691334457707, guid: 92f037d7dc39550408a93069c708c50a, type: 3}
+  m_PrefabInstance: {fileID: 9047464234331798191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6478075239722103692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2623825975372564771, guid: 92f037d7dc39550408a93069c708c50a, type: 3}

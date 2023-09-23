@@ -1,6 +1,4 @@
 using MorseGame.Player;
-using System.Collections;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
@@ -15,6 +13,7 @@ namespace MorseGame.Map
         public GameObject PlayerNPCPrefab;
         public GameObject GameUIPrefab;
         
+        /*
         public StageBinaryData GetStageBinaryData()
         {
             string pattern = @"Resources/(.*)\.prefab";
@@ -25,6 +24,7 @@ namespace MorseGame.Map
             string PlayerUIPath = ExtractPath(AssetDatabase.GetAssetPath(GameUIPrefab), pattern);
             return new StageBinaryData(mapPath, PlayerPath, PlayerNPCPath, PlayerUIPath, this.name);
         }
+        */
 
         public StageData SetStageData(StageBinaryData data)
         {

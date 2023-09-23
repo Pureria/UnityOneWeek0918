@@ -58,5 +58,7 @@ namespace MorseGame.UI
         public void HideUI() => StartCoroutine(Hide());
         public void HideUIAndMoveTitle() => StartCoroutine(Hide(() => SceneManager.LoadScene(_TitleSceneName)));
         public void HideUIAndMoveGame() => StartCoroutine(Hide(() => SceneManager.LoadScene(_GameSceneName)));
+
+        public void DebugChangeScene() => SceneManager.LoadScene(1);
     }    
 }

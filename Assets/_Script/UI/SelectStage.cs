@@ -3,6 +3,7 @@ using MorseGame.StartUp;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MorseGame.UI
 {
@@ -18,8 +19,10 @@ namespace MorseGame.UI
                 return;
             }
 
-            _StageSelecter.SaveStageFile(data.GetStageBinaryData());
+            _StageSelecter.SaveStageFile(data);
             _StartCanvas.HideUIAndMoveGame();
+            //_StartCanvas.DebugChangeScene();
+            //SceneManager.LoadScene("DebugGameScene");
         }
     }
 }

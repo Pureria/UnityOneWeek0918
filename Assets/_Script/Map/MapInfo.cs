@@ -15,6 +15,7 @@ namespace MorseGame.Map
         [SerializeField] private FallGround _FallGround;
         [SerializeField] private EnemyManager _EnemyManager;
         [SerializeField] private bool _IsPlayerRight = true;
+        [SerializeField] private Camera _MainCamera;
 
         public ObjectManager ObjectManager { get { return _ObjectManager; } }
         public Transform PlayerSpawnPosition { get { return _PlayerSpawnPosition; } }
@@ -27,5 +28,7 @@ namespace MorseGame.Map
         public EnemyManager EnemyManager { get { return _EnemyManager; } }
 
         public bool IsPlayerRight { get { return _IsPlayerRight; } }
+
+        public Camera MainCamera { get { return _MainCamera; } }
     }
 }

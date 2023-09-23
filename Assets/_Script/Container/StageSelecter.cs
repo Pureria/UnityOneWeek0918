@@ -16,21 +16,27 @@ namespace MorseGame.StartUp
 
         private void Update()
         {
+            /*
             if(_IsSetDebugStageData)
             {
                 _IsSetDebugStageData = false;
                 SaveStageFile(_DebugStageData.GetStageBinaryData());
             }
+            */
         }
 
-        public void SaveStageFile(StageBinaryData data)
+        public void SaveStageFile(StageData data)
         {
+            /*
             MemoryStream memoryStream= new MemoryStream();
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(memoryStream, data);
             byte[] binaryData = memoryStream.ToArray();
             PlayerPrefs.SetString(_StageHashKey, Convert.ToBase64String(binaryData));
             Debug.Log(data.StageName + "Çï€ë∂ÇµÇ‹ÇµÇΩÅB");
+            */
+
+            StageDataContainer.Instance.CurrentStageData = data;
         }
     }
 }

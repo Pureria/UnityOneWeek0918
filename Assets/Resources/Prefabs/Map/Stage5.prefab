@@ -232,6 +232,7 @@ MonoBehaviour:
   _FallGround: {fileID: 2501495284116366889}
   _EnemyManager: {fileID: 2264084738238870865}
   _IsPlayerRight: 0
+  _MainCamera: {fileID: 674181367496691719}
 --- !u!1 &3311009695353580904
 GameObject:
   m_ObjectHideFlags: 0
@@ -5426,6 +5427,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f037d7dc39550408a93069c708c50a, type: 3}
+--- !u!20 &674181367496691719 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4700447691334457707, guid: 92f037d7dc39550408a93069c708c50a, type: 3}
+  m_PrefabInstance: {fileID: 5215296070029429100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7784973292311281743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2623825975372564771, guid: 92f037d7dc39550408a93069c708c50a, type: 3}

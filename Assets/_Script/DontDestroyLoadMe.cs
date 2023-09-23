@@ -6,9 +6,18 @@ namespace MorseGame.Sound
 {
     public class DontDestroyLoadMe : MonoBehaviour
     {
+        public static DontDestroyLoadMe Instance;
         private void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
+            if(Instance == null)
+            {
+                DontDestroyOnLoad(this.gameObject);
+                Instance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

@@ -17,12 +17,21 @@ namespace MorseGame.StartUp
         private void Awake()
         {
             //デバッグステージ呼び出し、またはPlayerPrefsにステージが存在しない場合にデバッグステージ呼び出し
+            /*
             if(_IsLoadDebugStage || !PlayerPrefs.HasKey(_StageHashKey))
             {
                 SetUp(_DebugStageData);
                 return;
             }
+            */
 
+            if (_IsLoadDebugStage || StageDataContainer.Instance == null)
+            {
+                SetUp(_DebugStageData);
+                return;
+            }
+
+            /*
             string binaryStringData = PlayerPrefs.GetString(_StageHashKey);
             byte[] binaryData = Convert.FromBase64String(binaryStringData);
             MemoryStream memoryStream = new MemoryStream(binaryData);
@@ -35,6 +44,9 @@ namespace MorseGame.StartUp
                 SetUp(loadData);
             }
             else Debug.LogError("ステージデータが変換できませんでした。");
+            */
+
+            SetUp(StageDataContainer.Instance.CurrentStageData);
         }
 
         public void SetUp(StageData data)
@@ -52,6 +64,8 @@ namespace MorseGame.StartUp
             if (!InstantPlayer.TryGetComponent<PlayerController>(out pc))   Debug.LogError("プレイヤーのプレハブにPlayerControllerがありません。");
             if (!InstantPlayerNPC.TryGetComponent<PlayerNPC>(out pNPC))   Debug.LogError("プレイヤーNPCのプレハブにPlayerNPCがありません。");
             if (!InstantGameUI.TryGetComponent<GameCanvas>(out gameUI))    Debug.LogError("ゲームUIプレハブにGameCanvasがありません。");
+
+            mapInfo.MainCamera.gameObject.SetActive(true);
 
             pc.OnSendMorseInput     += mapInfo.ObjectManager.ReceiveMorseInput;
             pc.OnSendMorseInput     += mapInfo.GameManager.ReceiveMorseInput;
