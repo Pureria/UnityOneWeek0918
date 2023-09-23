@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3995418972304646101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.4, y: 0.1, z: 0}
+  m_LocalPosition: {x: -20, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -204,20 +204,20 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9088867132232967271}
-  - {fileID: 5700980567190910383}
-  - {fileID: 7540954666843371153}
-  - {fileID: 9162595679594119604}
-  - {fileID: 5670639951491046081}
-  - {fileID: 6098604454587246898}
-  - {fileID: 6962649521255320394}
-  - {fileID: 4612501397769547367}
   - {fileID: 7519852425580448527}
-  - {fileID: 3498932563207115883}
-  - {fileID: 3911712751547535719}
   - {fileID: 6120467151737892496}
   - {fileID: 2252147732123911085}
   - {fileID: 2635036142874608780}
+  - {fileID: 7540954666843371153}
+  - {fileID: 6098604454587246898}
+  - {fileID: 6962649521255320394}
+  - {fileID: 3498932563207115883}
+  - {fileID: 5700980567190910383}
+  - {fileID: 5670639951491046081}
+  - {fileID: 4612501397769547367}
+  - {fileID: 3911712751547535719}
   - {fileID: 7919020449284057014}
+  - {fileID: 9162595679594119604}
   m_Father: {fileID: 255785281955190722}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3736,7 +3736,7 @@ MonoBehaviour:
   _GoalPoint: {fileID: 8493347235773532627}
   _FallGround: {fileID: 5356891795037525374}
   _EnemyManager: {fileID: 8588951434768315035}
-  _IsPlayerRight: 0
+  _IsPlayerRight: 1
 --- !u!1001 &838540799894962277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4194,6 +4194,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1837804699842626303, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
+      propertyPath: InitJumpFloor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3986527953878202772, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_Name
       value: Object-JumpFloor (3)
@@ -4342,6 +4346,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1837804699842626303, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
+      propertyPath: InitJumpFloor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3986527953878202772, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_Name
       value: Object-JumpFloor (4)
@@ -4460,7 +4468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7334303542820799569, guid: 475d173b7f43fe444aafded4c66acf4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.87
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7334303542820799569, guid: 475d173b7f43fe444aafded4c66acf4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4784,7 +4792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7334303542820799569, guid: 475d173b7f43fe444aafded4c66acf4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.63
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7334303542820799569, guid: 475d173b7f43fe444aafded4c66acf4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4883,6 +4891,14 @@ PrefabInstance:
     - target: {fileID: 159560596297134093, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837804699842626303, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
+      propertyPath: JumpForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837804699842626303, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
+      propertyPath: InitJumpFloor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3986527953878202772, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_Name
@@ -5044,6 +5060,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1837804699842626303, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
+      propertyPath: JumpForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837804699842626303, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
+      propertyPath: InitJumpFloor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3986527953878202772, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_Name
       value: Object-JumpFloor (1)
@@ -5166,7 +5190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1246412492019207429, guid: b4ea08f7c370ac44985da183aba39a10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.88
+      value: -15.12
       objectReference: {fileID: 0}
     - target: {fileID: 1246412492019207429, guid: b4ea08f7c370ac44985da183aba39a10, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5322,7 +5346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7334303542820799569, guid: 475d173b7f43fe444aafded4c66acf4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.63
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7334303542820799569, guid: 475d173b7f43fe444aafded4c66acf4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5421,6 +5445,14 @@ PrefabInstance:
     - target: {fileID: 159560596297134093, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837804699842626303, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
+      propertyPath: JumpForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837804699842626303, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
+      propertyPath: InitJumpFloor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3986527953878202772, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_Name

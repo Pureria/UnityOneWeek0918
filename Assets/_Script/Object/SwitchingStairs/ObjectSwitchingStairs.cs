@@ -27,7 +27,7 @@ namespace MorseGame.Object
             if (NowState) SwitchingStairs.SetActive(true);
             else SwitchingStairs.SetActive(false);
 
-            float alpha = 0.0f;
+            float alpha = 0.5f;
             if (NowState) alpha = 1.0f;
             Color set = _StairSprite.color;
             set.a = alpha;
