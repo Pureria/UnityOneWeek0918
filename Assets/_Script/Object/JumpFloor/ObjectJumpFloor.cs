@@ -24,6 +24,7 @@ namespace MorseGame.Object
         [SerializeField] private SpriteRenderer _FloorSprite;
 
         private float CoolTime;
+        private float alpha = 0.5f;
 
         protected override void Start()
         {
@@ -32,6 +33,9 @@ namespace MorseGame.Object
             CoolTime = 0.0f;
             NowState = InitJumpFloor;
 
+            if (NowState) alpha = 1.0f;
+            else alpha = 0.5f;
+            //DOTween.ToAlpha(() => _StairSprite.color, color => _StairSprite.color = color, alpha, SwitchingStairsChangeTime);
             _FloorSprite.DOFade(alpha, JumpFloorChangeTime).Play();
         }
 
@@ -39,7 +43,6 @@ namespace MorseGame.Object
         {
             base.ReceiveInteract();
 
-            float alpha = 0.0f;
             if (NowState) alpha = 1.0f;
             else alpha = 0.5f;
             //DOTween.ToAlpha(() => _StairSprite.color, color => _StairSprite.color = color, alpha, SwitchingStairsChangeTime);
