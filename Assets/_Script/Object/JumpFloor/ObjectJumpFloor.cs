@@ -31,6 +31,8 @@ namespace MorseGame.Object
 
             CoolTime = 0.0f;
             NowState = InitJumpFloor;
+
+            _FloorSprite.DOFade(alpha, JumpFloorChangeTime).Play();
         }
 
         public override void ReceiveInteract()

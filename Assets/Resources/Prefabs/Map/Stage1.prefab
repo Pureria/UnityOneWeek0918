@@ -887,6 +887,26 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -10, y: -8, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 21
+      m_TileSpriteIndex: 21
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 7
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -9, y: -8, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 21
+      m_TileSpriteIndex: 21
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 7
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -8, y: -8, z: 0}
     second:
       serializedVersion: 2
@@ -2931,8 +2951,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: d93cdbcac0f1b3844b9e39966388870b, type: 2}
   - m_RefCount: 14
     m_Data: {fileID: 11400000, guid: 1a2fa0a82b755bd48a205f30461bf511, type: 2}
   - m_RefCount: 14
@@ -2984,8 +3004,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 21300000, guid: 2d45b29f1d1e301479e31979893ebbd4, type: 3}
   - m_RefCount: 14
     m_Data: {fileID: -810450912, guid: 33266ccf74560af40a86779c2c8d28f6, type: 3}
   - m_RefCount: 14
@@ -2995,7 +3015,7 @@ Tilemap:
   - m_RefCount: 51
     m_Data: {fileID: 1926564756, guid: 33266ccf74560af40a86779c2c8d28f6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 260
+  - m_RefCount: 262
     m_Data:
       e00: 1
       e01: 0
@@ -3028,7 +3048,7 @@ Tilemap:
     m_Data: {r: 4.2182e-41, g: 4.2182e-41, b: 4.2182e-41, a: 4.2182e-41}
   - m_RefCount: 0
     m_Data: {r: 4.2182e-41, g: 4.2182e-41, b: 4.2182e-41, a: 4.2182e-41}
-  - m_RefCount: 260
+  - m_RefCount: 262
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -3723,7 +3743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 159560596297134093, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.994
+      value: -8.76
       objectReference: {fileID: 0}
     - target: {fileID: 159560596297134093, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3779,7 +3799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5640967205419091248, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: -0.98
       objectReference: {fileID: 0}
     - target: {fileID: 7248950398983013400, guid: 5c17b4b8467592947a98d35ef5ac577a, type: 3}
       propertyPath: m_Size.x
