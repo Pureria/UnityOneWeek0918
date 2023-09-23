@@ -21,6 +21,7 @@ namespace MorseGame.Enemy
         //private bool stateEnter = true;     //State‚ªØ‚è‘Ö‚í‚Á‚½‚Æ‚«‚Éˆê“x‚¾‚¯ˆ—‚ğs‚¤‚Æ‚«‚Ég‚¤
 
         [SerializeField] private float speed = 1.0f;
+        [SerializeField] private float airSpeed = 0.5f;
         [SerializeField] private bool isRight = true;
         [SerializeField] private float _CheckFrontDistance = 1.0f;
         [SerializeField] private float _CheckGroundRadius = 0.2f;
@@ -138,6 +139,11 @@ namespace MorseGame.Enemy
                 Vector2 move = new Vector2(speed * (isRight ? 1 : -1), myRB.velocity.y);
                 myRB.velocity = move;
             }
+            else if(currentState == EnemyState.fall || currentState == EnemyState.jump)
+            {
+                Vector2 move = new Vector2(airSpeed * (isRight ? 1 : -1), myRB.velocity.y);
+                myRB.velocity = move;
+            }
         }
     
         private void ChangeState(EnemyState newState)
@@ -187,7 +193,7 @@ namespace MorseGame.Enemy
             foreach (RaycastHit2D hit in hits)
             {
                 Collider2D collider = hit.collider;
-                if (!collider.isTrigger && !collider.CompareTag("Player") && !collider.CompareTag("Enemy"))
+                if (!collider.isTrigger && !collider.CompareTag("Player") && collider.transform != this.transform)
                 {
                     ret = true;
                 }
