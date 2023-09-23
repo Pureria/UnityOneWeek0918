@@ -8,6 +8,7 @@ namespace MorseGame.Player
     public class PlayerInputController : MonoBehaviour
     {
         private bool _MorseInput = false;
+        private bool _PauseInput = false;
         private float _MorseInputStartTime = 0.0f;
         private float _MorseInputCanceledTime = 0.0f;
 
@@ -17,6 +18,7 @@ namespace MorseGame.Player
         public float MorseInputStartTime { get { return _MorseInputStartTime; } }
         public float MorseInputCanceledTime { get { return _MorseInputCanceledTime; } }
         public Vector2 MousePosition { get { return _MousePosition; } }
+        public bool PauseInput { get { return _PauseInput; } }
 
         public void OnMorseInput(InputAction.CallbackContext context)
         {
@@ -37,5 +39,15 @@ namespace MorseGame.Player
         {
             _MousePosition = context.ReadValue<Vector2>();
         }
+
+        public void OnPauseInput(InputAction.CallbackContext context)
+        {
+            if(context.started)
+            {
+                _PauseInput = true;
+            }
+        }
+
+        public void UsePauseInput() => _PauseInput = false;
     }
 }

@@ -61,6 +61,7 @@ namespace MorseGame.StartUp
             pc.OnClearMorseAction   += gameUI.PlayerCanvas.ClearText;
             pc.OnDelOneMorseAction  += gameUI.PlayerCanvas.DeleteBackText;
             pc.OnNowMorseInputText  += gameUI.PlayerCanvas.NowInput;
+            pc.OnSwitchPauseUI      += gameUI.SwitchPauseUI;
 
             pNPC.OnDeadAction       += mapInfo.GameManager.GameOver;
             pNPC.SetIsPlayerRight(mapInfo.IsPlayerRight);
@@ -74,6 +75,8 @@ namespace MorseGame.StartUp
             mapInfo.GameManager.OnGameOverAction    += gameUI.GameOverPopup.Show;
             mapInfo.GoalPoint.OnGoalInPlayer        += mapInfo.GameManager.GameClear;
             mapInfo.FallGround.OnGameOver           += mapInfo.GameManager.GameOver;
+
+            gameUI.PauseUI.SetStartCanvas(gameUI.StartCanvas);
 
             InstantPlayerNPC.transform.position = mapInfo.PlayerSpawnPosition.position;
         }
