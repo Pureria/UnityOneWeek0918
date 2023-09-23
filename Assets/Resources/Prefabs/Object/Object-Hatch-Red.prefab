@@ -205,7 +205,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.2971698, g: 0.7147757, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5008496, b: 0.2980392, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 8507250927485797525}
   - component: {fileID: 7786339662134733454}
   m_Layer: 7
-  m_Name: Object-Hatch
+  m_Name: Object-Hatch-Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1c83b9456b1904899fa22296af8742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MorseData: {fileID: 11400000, guid: df0d59a163e3d94479ac4e8e794b4f83, type: 2}
+  _MorseData: {fileID: 11400000, guid: 349565728bb23e64c80013ff99ff984c, type: 2}
   _PopUpWindow: {fileID: 5370457911653990656}
   _isDebugInteract: 0
   _TextSize: 0.8

@@ -17,6 +17,8 @@ namespace MorseGame.UI
 
         [SerializeField] private string _TitleSceneName = "TitleScene";
         [SerializeField] private string _GameSceneName = "GameScene";
+
+        [SerializeField] private AudioSource _AudioSource;
         private void Start()
         {
             StartCoroutine(Show());
@@ -24,6 +26,7 @@ namespace MorseGame.UI
 
         private IEnumerator Show()
         {
+            _AudioSource.Play();
             foreach (Image img in _FillImages)
             {
                 img.DOFillAmount(0f, _FillTime).SetEase(Ease.OutCubic).Play();
