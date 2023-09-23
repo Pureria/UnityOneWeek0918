@@ -54,8 +54,8 @@ namespace MorseGame.Player
             if(Time.timeScale > 0)
             {
                 CheckInput();
+                CheckMousePosition();
             }
-            CheckMousePosition();
         }
 
         private void CheckInput()

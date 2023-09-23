@@ -63,6 +63,7 @@ namespace MorseGame.StartUp
             pc.OnNowMorseInputText  += gameUI.PlayerCanvas.NowInput;
 
             pNPC.OnDeadAction       += mapInfo.GameManager.GameOver;
+            pNPC.SetIsPlayerRight(mapInfo.IsPlayerRight);
 
             mapInfo.GameManager.OnGameStartAction   += pNPC.StartGame;
             mapInfo.GameManager.OnGameStartAction   += gameUI.GameStart;
