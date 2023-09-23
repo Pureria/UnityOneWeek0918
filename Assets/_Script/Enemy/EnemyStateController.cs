@@ -58,7 +58,6 @@ namespace MorseGame.Enemy
 
         private void Update()
         {
-            Debug.Log(currentState);
 
             //‘O•ûŒü‚ÌŠm”F
             Vector2 origin = _CheckFrontTran.position;
