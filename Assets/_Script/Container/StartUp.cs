@@ -56,7 +56,7 @@ namespace MorseGame.StartUp
             pc.OnSendMorseInput     += mapInfo.ObjectManager.ReceiveMorseInput;
             pc.OnSendMorseInput     += mapInfo.GameManager.ReceiveMorseInput;
             pc.OnShowObjectUI       += mapInfo.ObjectManager.ReceiveShowMorseUI;
-            pc.OnHideObjectUI       += mapInfo.ObjectManager.ReceiveHideMorseUI;
+            pc.OnInitObjectUI       += mapInfo.ObjectManager.ClearShowMorseUIList;
             pc.OnAddMorseAction     += gameUI.PlayerCanvas.AddText;
             pc.OnClearMorseAction   += gameUI.PlayerCanvas.ClearText;
             pc.OnDelOneMorseAction  += gameUI.PlayerCanvas.DeleteBackText;

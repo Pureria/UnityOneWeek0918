@@ -3600,6 +3600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 1784723143775767962, guid: 475d173b7f43fe444aafded4c66acf4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7334303542820799569, guid: 475d173b7f43fe444aafded4c66acf4e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3668,11 +3672,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 127645353516896266, guid: cc37e19b0d952ba40bfa27ed766e62bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.98
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 127645353516896266, guid: cc37e19b0d952ba40bfa27ed766e62bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.88
+      value: -4.67
       objectReference: {fileID: 0}
     - target: {fileID: 127645353516896266, guid: cc37e19b0d952ba40bfa27ed766e62bd, type: 3}
       propertyPath: m_LocalPosition.z
