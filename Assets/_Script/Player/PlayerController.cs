@@ -34,6 +34,7 @@ namespace MorseGame.Player
         public Action OnClearMorseAction;
         public Action<int> OnDelOneMorseAction;
         public Action<string> OnNowMorseInputText;
+        public Action OnSwitchPauseUI;
 
         private void Start()
         {
@@ -55,6 +56,12 @@ namespace MorseGame.Player
             {
                 CheckInput();
                 CheckMousePosition();
+            }
+
+            if(_InputController.PauseInput)
+            {
+                _InputController.UsePauseInput();
+                OnSwitchPauseUI?.Invoke();
             }
         }
 
