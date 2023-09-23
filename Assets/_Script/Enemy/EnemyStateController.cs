@@ -193,7 +193,7 @@ namespace MorseGame.Enemy
             foreach (RaycastHit2D hit in hits)
             {
                 Collider2D collider = hit.collider;
-                if (!collider.isTrigger && !collider.CompareTag("Player") && !collider.CompareTag("Enemy"))
+                if (!collider.isTrigger && !collider.CompareTag("Player") && collider.transform != this.transform)
                 {
                     ret = true;
                 }
