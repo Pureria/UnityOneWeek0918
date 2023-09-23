@@ -26,6 +26,12 @@ namespace MorseGame.Object
             NowState = InitSwitchingStairs;
             if (NowState) SwitchingStairs.SetActive(true);
             else SwitchingStairs.SetActive(false);
+
+            float alpha = 0.0f;
+            if (NowState) alpha = 1.0f;
+            Color set = _StairSprite.color;
+            set.a = alpha;
+            _StairSprite.color = set;
         }
 
         public override void ReceiveInteract()

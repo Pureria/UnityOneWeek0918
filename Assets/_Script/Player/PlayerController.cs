@@ -29,7 +29,7 @@ namespace MorseGame.Player
 
         public Action<List<MorseData>> OnSendMorseInput;
         public Action<ObjectBase> OnShowObjectUI;
-        public Action OnHideObjectUI;
+        public Action OnInitObjectUI;
         public Action<int> OnAddMorseAction;
         public Action OnClearMorseAction;
         public Action<int> OnDelOneMorseAction;
@@ -51,7 +51,10 @@ namespace MorseGame.Player
 
         private void Update()
         {
-            CheckInput();
+            if(Time.timeScale > 0)
+            {
+                CheckInput();
+            }
             CheckMousePosition();
         }
 
@@ -152,8 +155,9 @@ namespace MorseGame.Player
             //TODO::íÜêgóvïœçX
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(_InputController.MousePosition);
             RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
-            bool check = false;
+            bool check = true;
 
+            OnInitObjectUI?.Invoke();
             foreach(RaycastHit2D hit in hits)
             {
                 if (hit.collider != null)
@@ -165,16 +169,18 @@ namespace MorseGame.Player
                         if(clickedObject.TryGetComponent<ObjectBase>(out ObjectBase obj))
                         {
                             OnShowObjectUI?.Invoke(obj);
-                            check = true;
+                            check = false;
                         }
                     }
                 }
             }
 
+            /*
             if(!check)
             {
                 OnHideObjectUI?.Invoke();
             }
+            */
         }
     }
 }
