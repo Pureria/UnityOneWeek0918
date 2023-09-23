@@ -230,7 +230,7 @@ MonoBehaviour:
   _TextHeight: 1.3
   InitJumpFloor: 0
   JumpFloor: {fileID: 582646396912981608}
-  JumpForce: 10
+  JumpForce: 11.5
   CoolTimeSec: 0.5
   CheckPlayer: {fileID: 7278964612244704487}
 --- !u!1 &8963681339606134134

@@ -55,7 +55,7 @@ namespace MorseGame.Object.Manager
                 if(isSame)
                 {
                     obj.ReceiveInteract();
-                    break;
+                    //break;
                 }
             }
         }

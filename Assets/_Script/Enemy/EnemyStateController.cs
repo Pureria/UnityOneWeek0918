@@ -18,7 +18,7 @@ namespace MorseGame.Enemy
         }
 
         EnemyState currentState = EnemyState.idle;  //Enemyの現在の状態、初期値はIdleにしてある
-        private bool stateEnter = true;     //Stateが切り替わったときに一度だけ処理を行うときに使う
+        //private bool stateEnter = true;     //Stateが切り替わったときに一度だけ処理を行うときに使う
 
         [SerializeField] private float speed = 1.0f;
         [SerializeField] private bool isRight = true;
@@ -143,7 +143,7 @@ namespace MorseGame.Enemy
         private void ChangeState(EnemyState newState)
         {
             currentState = newState;
-            stateEnter = false;
+            //stateEnter = false;
         }
 
         public void StartGame()
