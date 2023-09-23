@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b616cebb4553f042a060fe912fed8d5, type: 3}
+  m_Name: Stage4
+  m_EditorClassIdentifier: 
+  MapPrefab: {fileID: 924385132645140156, guid: 3c4b00497a199814cb894381ae17a7c2, type: 3}
+  PlayerPrefab: {fileID: 2794013007291207979, guid: 0c816b890298d57438f74b93b9fed924, type: 3}
+  PlayerNPCPrefab: {fileID: 3482369632416643733, guid: f4e084be35d41fa44ae7b86cc857cf5b, type: 3}
+  GameUIPrefab: {fileID: 704952158443661290, guid: 4f68b474cc1004e4d921b894a38a77da, type: 3}

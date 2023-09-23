@@ -60,3 +60,6 @@ TagManager:
   - name: player
     uniqueID: 1559823863
     locked: 0
+  - name: ObjectPopUp
+    uniqueID: 2045083993
+    locked: 0

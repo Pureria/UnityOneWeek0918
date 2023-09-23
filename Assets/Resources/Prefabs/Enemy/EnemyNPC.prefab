@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  airSpeed: 1
   isRight: 1
   _CheckFrontDistance: 0.4
   _CheckGroundRadius: 0.7
