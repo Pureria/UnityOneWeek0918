@@ -4298,6 +4298,7 @@ MonoBehaviour:
   _GoalPoint: {fileID: 5293496095011098684}
   _FallGround: {fileID: 4685929527257072164}
   _EnemyManager: {fileID: 1515813633773156406}
+  _IsPlayerRight: 1
 --- !u!1001 &532604829227475455
 PrefabInstance:
   m_ObjectHideFlags: 0
