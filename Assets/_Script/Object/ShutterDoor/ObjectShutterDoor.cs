@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using DG.Tweening;
 
 namespace MorseGame.Object
 {
@@ -12,8 +13,9 @@ namespace MorseGame.Object
         [SerializeField]
         private float ShutterDoorChangeTime;
 
-        [SerializeField]
-        private GameObject ShutterDoor;
+        [SerializeField] private BoxCollider2D _DoorCollider;
+        [SerializeField] private SpriteRenderer _ShutterDoorSprite;
+        [SerializeField] private float SpriteChangeTime = 0.5f;
 
         private float ChangeStartTime;
 
@@ -22,8 +24,11 @@ namespace MorseGame.Object
             base.Start();
 
             NowState = InitShutterDoor;
-            if (NowState) ShutterDoor.SetActive(false);
-            else ShutterDoor.SetActive(true);
+
+            _DoorCollider.enabled = !NowState;
+            float alpha = 1.0f;
+            if (NowState) alpha = 0.1f;
+            _ShutterDoorSprite.DOFade(alpha, SpriteChangeTime).Play();
         }
 
         public override void ReceiveInteract()
@@ -32,8 +37,10 @@ namespace MorseGame.Object
 
             ChangeStartTime = Time.time;
 
-            if (NowState) ShutterDoor.SetActive(false);
-            else ShutterDoor.SetActive(true);
+            _DoorCollider.enabled = !NowState;
+            float alpha = 1.0f;
+            if (NowState) alpha = 0.1f;
+            _ShutterDoorSprite.DOFade(alpha, SpriteChangeTime).Play();
         }
 
         public override void LogicUpdate()

@@ -19,6 +19,8 @@ namespace MorseGame.Object
         [SerializeField] private SpriteRenderer _StairSprite;
         private float ChangeStartTime;
 
+        private Color _InitColor;
+
         protected override void Start()
         {
             base.Start();
@@ -27,9 +29,12 @@ namespace MorseGame.Object
             if (NowState) SwitchingStairs.SetActive(true);
             else SwitchingStairs.SetActive(false);
 
+            _InitColor = _StairSprite.color;
+
             float alpha = 0.5f;
             if (NowState) alpha = 1.0f;
-            Color set = _StairSprite.color;
+            Color set = _InitColor ;
+            if(!NowState) set = Color.black;
             set.a = alpha;
             _StairSprite.color = set;
         }
@@ -46,8 +51,12 @@ namespace MorseGame.Object
             float alpha = 0.0f;
             if (NowState) alpha = 1.0f;
             else alpha = 0.5f;
+            Color set = _InitColor;
+            if (!NowState) set = Color.black;
+            set.a = alpha;
             //DOTween.ToAlpha(() => _StairSprite.color, color => _StairSprite.color = color, alpha, SwitchingStairsChangeTime);
-            _StairSprite.DOFade(alpha, SwitchingStairsChangeTime).Play();
+            //_StairSprite.DOFade(alpha, SwitchingStairsChangeTime).Play();
+            _StairSprite.DOColor(set, SwitchingStairsChangeTime).Play();
         }
 
         public override void LogicUpdate()
