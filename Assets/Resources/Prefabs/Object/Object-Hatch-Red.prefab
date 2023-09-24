@@ -314,7 +314,9 @@ MonoBehaviour:
   _TextHeight: 1.3
   InitHatch: 0
   HatchChangeTime: 0
-  Hatch: {fileID: 1986176317774078630}
+  HatchCollider: {fileID: 7066709926108170923}
+  _HatchSprite: {fileID: 1153886807974461078}
+  SpriteChangeTime: 0.5
 --- !u!1001 &4980368185647862144
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,7 +14,10 @@ namespace MorseGame.Object
         private float HatchChangeTime;
 
         [SerializeField]
-        private GameObject Hatch;
+        private BoxCollider2D HatchCollider;
+
+        [SerializeField] private SpriteRenderer _HatchSprite;
+        [SerializeField] private float SpriteChangeTime = 0.5f;
 
         private float ChangeStartTime;
 
@@ -22,8 +26,12 @@ namespace MorseGame.Object
             base.Start();
 
             NowState = InitHatch;
-            if (NowState) Hatch.SetActive(false);
-            else Hatch.SetActive(true);
+            if (NowState) HatchCollider.enabled = false;
+            else HatchCollider.enabled = true;
+
+            float alpha = 1.0f;
+            if (NowState) alpha = 0.2f;
+            _HatchSprite.DOFade(alpha, SpriteChangeTime).Play();
         }
 
         public override void ReceiveInteract()
@@ -32,8 +40,11 @@ namespace MorseGame.Object
 
             ChangeStartTime = Time.time;
 
-            if (NowState) Hatch.SetActive(false);
-            else Hatch.SetActive(true);
+            HatchCollider.enabled = !NowState;
+
+            float alpha = 1.0f;
+            if (NowState) alpha = 0.2f;
+            _HatchSprite.DOFade(alpha, SpriteChangeTime).Play();
         }
 
         public override void LogicUpdate()
